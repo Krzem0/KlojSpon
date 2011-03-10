@@ -6,15 +6,109 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="styl.css" type="text/css" />
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
-        MasterPage
-        <br />
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
-    </form>
+    <div id="wrapper">
+		<div id="header">
+					
+			<h1 id="logo">Kloj<span class="gray">Spon</span></h1>
+			<h2 id="slogan">Zadania programistyczne</h2>			
+		
+			<div id="searchform">	
+				<form method="post" class="search" action="#" >
+					<p><input name="search_query" class="textbox" type="text" />
+  					<input name="search" class="button" type="submit" value="Szukaj" /></p>
+				</form>
+			</div>
+			
+		</div><!-- / header -->
+		
+		<div id="menu">
+			<ul>
+				<li class="active"><a href="index.html"><span>Strona główna</span></a></li>
+				<li><a href="index.html"><span>Zadania</span></a></li>
+				<li><a href="index.html"><span>Materiały</span></a></li>
+				<li><a href="index.html"><span>Zasady</span></a></li>
+				<li><a href="index.html"><span>Ranking</span></a></li>			
+			</ul>
+		</div><!-- / menu -->
+		
+		<div id="content-wrap">
+			<div id="sidebar">
+				<h2>Zaloguj się</h2>
+				<form action="#">			
+					<p>
+					<label>Login</label>
+					<input value="" type="text" size="20" />
+					<label>Hasło</label>
+					<input type="password" size="20" />
+					</p>
+					<p>
+					<input class="button" type="submit" value="zaloguj"/>		
+					</p>					
+				</form>	
+			
+				<h2>Twoje konto</h2>
+				<ul class="sidemenu">
+					<li><a href="">Profil</a></li>
+					<li><a href="">Moje zadania</a></li>
+					<li><a href="">Moje grupy</a></li>
+					<li><a href="">Zgłoś zadanie</a></li>						
+				</ul>		
+			
+				<h2>Twoje konto</h2>
+				<ul class="sidemenu">
+					<li><a href="">Profil</a></li>
+					<li><a href="">Zarządzanie zadaniami</a></li>
+					<li><a href="">Zarządzanie grupami</a></li>
+					<li><a href="">Zarządzanie użykownikami</a></li>
+				</ul>						
+			
+				<h2>Statystyki</h2>
+				<p>Ilość wszystkich zadań: 2354</p>
+				<p>Rozwiązane zadania: 234</p>
+				<p>Skuteczność: 24%</p>
+				
+			</div><!-- / sidebar -->
+		
+			<div id="main">
+				
+				<a name="SampleTags"></a>				
+				<h1>Sample Tags</h1>
+				
+				<h3>Code</h3>				
+				<p><code>
+				code-sample { <br />
+				font-weight: bold;<br />
+				font-style: italic;<br />				
+				}
+				</code></p>	
+				
+				<h3>Blockquote</h3>			
+				<blockquote><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
+				nibh euismod tincidunt ut laoreet dolore magna aliquam erat....</p></blockquote>
+				
+				<h3>Image and text</h3>
+				<p><a href="http://getfirefox.com/"><img src="images/firefox-gray.jpg" width="100" height="120" alt="firefox" class="fl" /></a>
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. 
+				Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu 
+				posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum 
+				odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra 
+				condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. 
+				In tristique orci porttitor ipsum. Aliquam ornare diam iaculis nibh. Proin luctus, velit pulvinar 
+				ullamcorper nonummy, mauris enim eleifend urna, congue egestas elit lectus eu est. 				
+				</p>
+								
+				<br />								
+			</div><!-- / main -->
+		</div><!-- / content-wrap -->
+		
+		<div id="footer">
+			<p class="ac">&copy; 2011 <strong>KlojSpon</strong></p>	
+		</div><!-- / footer -->
+			
+</div><!-- / wrapper -->
 </body>
 </html>

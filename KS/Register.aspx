@@ -3,7 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server">
+    <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" 
+        CancelButtonText="Anuluj" 
+        CompleteSuccessText="Twoje konto zostało utworzone pomyślnie." 
+        ContinueButtonText="Kontynuuj" CreateUserButtonText="Utwórz" 
+        FinishCompleteButtonText="Koniec" FinishPreviousButtonText="Wstecz" 
+        StartNextButtonText="Dalej" StepNextButtonText="Dalej" 
+        StepPreviousButtonText="Wstecz">
         <WizardSteps>
             <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
                 <ContentTemplate>
@@ -58,7 +64,7 @@
                                     ToolTip="E-mail is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                             </td>
                         </tr>
-                        <tr>
+                        <%--<tr>
                             <td align="right">
                                 <asp:Label ID="QuestionLabel" runat="server" AssociatedControlID="Question">Pytanie Bezpieczeństwa:</asp:Label>
                             </td>
@@ -79,7 +85,7 @@
                                     ControlToValidate="Answer" ErrorMessage="Security answer is required." 
                                     ToolTip="Security answer is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                             </td>
-                        </tr>
+                        </tr>--%>
                         <tr>
                             <td align="center" colspan="2">
                                 <asp:CompareValidator ID="PasswordCompare" runat="server" 

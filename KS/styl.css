@@ -136,8 +136,6 @@ form.search input.button {
 	letter-spacing: -2px;
 	color: #FFF;
 	text-transform: none;
-	
-	/* change the values of top and Left to adjust the position of the logo*/
 	top: 19px; left: 53px;	
 }
 #header h2#slogan {
@@ -147,9 +145,7 @@ form.search input.button {
 	font: bold 12px 'Trebuchet MS', Arial, Sans-serif;
 	text-transform: none;
 	color: #FFF;
-	
-	/* change the values of top and Left to adjust the position of the slogan*/
-	top: 65px; left:75px;			
+	top: 65px; left:69px;			
 }
 #header #searchform {
 	float: right;

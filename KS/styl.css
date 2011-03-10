@@ -51,11 +51,11 @@ blockquote {
   	background: #FAFAFA url('images/quote.gif') no-repeat 5px 5px;    
 }
 
-form {
+/*form {
 	margin:10px; padding: 0 5px;
 	border: 1px solid #f2f2f2; 
 	background-color: #FAFAFA; 
-}
+}*/
 label {
 	display:block;
 	font-weight:bold;

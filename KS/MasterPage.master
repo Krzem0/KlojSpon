@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styl.css" type="text/css" />
 </head>
 <body>
-<form id="form1" runat="server">
+    <form id="form1" runat="server">
     <div id="wrapper">
         <div id="header">
             <h1 id="logo">
@@ -43,7 +43,7 @@
                     TitleText="<h2>Zaloguj się</h2>" UserNameLabelText="Login:" UserNameRequiredErrorMessage="Login jest wymagany."
                     FailureText="Twoja próba logowania nie powiodła się." CssClass="sidebar">
                     <LayoutTemplate>
-                        <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
+                        <table cellpadding="1" cellspacing="0" style="border-collapse: collapse;">
                             <tr>
                                 <td>
                                     <table cellpadding="0">
@@ -59,9 +59,8 @@
                                             </td>
                                             <td>
                                                 <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" 
-                                                    ControlToValidate="UserName" ErrorMessage="Login jest wymagany." 
-                                                    ToolTip="Login jest wymagany." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
+                                                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
+                                                    ErrorMessage="Login jest wymagany." ToolTip="Login jest wymagany." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
                                             </td>
                                         </tr>
                                         <tr>
@@ -70,9 +69,8 @@
                                             </td>
                                             <td>
                                                 <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" 
-                                                    ControlToValidate="Password" ErrorMessage="Hasło jest wymagane." 
-                                                    ToolTip="Hasło jest wymagane." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
+                                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
+                                                    ErrorMessage="Hasło jest wymagane." ToolTip="Hasło jest wymagane." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
                                             </td>
                                         </tr>
                                         <tr>
@@ -81,14 +79,13 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="center" colspan="2" style="color:Red;">
+                                            <td align="center" colspan="2" style="color: Red;">
                                                 <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td align="right" colspan="2">
-                                                <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Zaloguj" 
-                                                    ValidationGroup="ctl00$Login1" />
+                                                <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Zaloguj" ValidationGroup="ctl00$Login1" />
                                             </td>
                                         </tr>
                                     </table>
@@ -97,26 +94,55 @@
                         </table>
                     </LayoutTemplate>
                 </asp:Login>
-                <asp:LoginName ID="LoginName1" runat="server" />
                 <asp:LoginView ID="LoginView1" runat="server">
                 </asp:LoginView>
-                <asp:LoginStatus ID="LoginStatus1" runat="server" Visible="False" />
-                <h2>
-                    Twoje konto</h2>
-                <ul class="sidemenu">
+                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                <asp:LoginName ID="LoginName1" runat="server" />
+                <asp:Label ID="TwojeKontoLabel" runat="server" Text="<h2>Twoje konto</h2>" Visible="false"></asp:Label>
+                <!-- Menu dla studenta -->
+                <asp:Menu ID="MenuStudent" runat="server" Visible="False">
+                    <Items>
+                        <asp:MenuItem Text="Profil" Value="Profil"></asp:MenuItem>
+                        <asp:MenuItem Text="Moje zadania" Value="Moje zadania"></asp:MenuItem>
+                        <asp:MenuItem Text="Moje grupy" Value="Moje grupy"></asp:MenuItem>
+                        <asp:MenuItem Text="Zgłoś zadanie" Value="Zgłoś zadanie"></asp:MenuItem>
+                        <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+                <!-- Menu dla prowadzacego -->
+                <asp:Menu ID="MenuProwadzacy" runat="server" Visible="false">
+                    <Items>
+                        <asp:MenuItem Text="Profil" Value="Profil"></asp:MenuItem>
+                        <asp:MenuItem Text="Zarządzanie zadaniami" Value="Zarządzanie zadaniami"></asp:MenuItem>
+                        <asp:MenuItem Text="Zarządzanie grupami" Value="Zarządzanie grupami"></asp:MenuItem>
+                        <asp:MenuItem Text="Zarządzanie użykownikami" Value="Zarządzanie użykownikami"></asp:MenuItem>
+                        <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+                <!-- Menu ogólne -->
+                <asp:Menu ID="MenuOgolne" runat="server" Visible="false">
+                    <Items>
+                        <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+                <asp:LoginStatus ID="LoginStatus1" runat="server" Visible="False" LogoutText="Wyloguj" />
+                <%--<ul class="sidemenu">
                     <li><a href="">Profil</a></li>
                     <li><a href="">Moje zadania</a></li>
                     <li><a href="">Moje grupy</a></li>
                     <li><a href="">Zgłoś zadanie</a></li>
-                </ul>
-                <h2>
+                    
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" Visible="False" LogoutText="<li>Wyloguj</li>" />
+                    
+                </ul>--%>
+                <%--<h2>
                     Twoje konto</h2>
                 <ul class="sidemenu">
                     <li><a href="">Profil</a></li>
                     <li><a href="">Zarządzanie zadaniami</a></li>
                     <li><a href="">Zarządzanie grupami</a></li>
                     <li><a href="">Zarządzanie użykownikami</a></li>
-                </ul>
+                </ul>--%>
                 <h2>
                     Statystyki</h2>
                 <p>
@@ -126,46 +152,13 @@
                 <p>
                     Skuteczność: 24%</p>
             </div>
-            <!-- / sidebar -->
-            <div id="main">
-                <a name="SampleTags"></a>
-                <h1>
-                    Sample Tags</h1>
-                <h3>
-                    Code</h3>
-                <p>
-                    <code>code-sample {
-                        <br />
-                        font-weight: bold;<br />
-                        font-style: italic;<br />
-                        } </code>
-                </p>
-                <h3>
-                    Blockquote</h3>
-                <blockquote>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                        euismod tincidunt ut laoreet dolore magna aliquam erat....</p>
-                </blockquote>
-                <h3>
-                    Image and text</h3>
-                <p>
-                    <a href="http://getfirefox.com/">
-                        <img src="images/firefox-gray.jpg" width="100" height="120" alt="firefox" class="fl" /></a>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse
-                    bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis
-                    varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat
-                    bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla
-                    magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna,
-                    eget fringilla velit magna id neque. Curabitur vel urna. In tristique orci porttitor
-                    ipsum. Aliquam ornare diam iaculis nibh. Proin luctus, velit pulvinar ullamcorper
-                    nonummy, mauris enim eleifend urna, congue egestas elit lectus eu est.
-                </p>
-                <br />
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
-            <!-- / main -->
+        <!-- / sidebar -->
+        <div id="main">
+            
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!-- / main -->
         </div>
         <!-- / content-wrap -->
         <div id="footer">

@@ -10,11 +10,25 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-            MembershipUser user = Membership.GetUser();
-            if (user!=null)
+        MembershipUser user = Membership.GetUser();
+        if (user != null)
+        {
+            Login1.Visible = false;
+            LoginStatus1.Visible = true;
+            Label1.Text = "<h2>Twoje konto</h2></br>Jesteś zalogowany jako: ";
+            TwojeKontoLabel.Visible = true;
+            if (Roles.IsUserInRole("Prowadzacy"))
             {
-                Login1.Visible = false;
-                LoginStatus1.Visible = true;
+                MenuProwadzacy.Visible = true;
             }
+            else if (Roles.IsUserInRole("Student"))
+            {
+                MenuStudent.Visible = true;
+            }
+            else
+            {
+                MenuOgolne.Visible = true;
+            }
+        }
     }
 }

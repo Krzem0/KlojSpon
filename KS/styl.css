@@ -76,7 +76,7 @@ textarea {
 	display:block;
 	color:#777;
 }
-input.button { 
+input.button, .button input { 
 	margin: 0; 
 	font: bolder 12px Arial, Sans-serif; 
 	border: 1px solid #CCC; 
@@ -84,6 +84,7 @@ input.button {
 	background: #FFF;
 	color: #275F6C;
 }
+input.button:hover, .button input:hover {background-color: #EFEFEF;}
 
 form.search {
 	padding: 0; margin: 0; 
@@ -228,7 +229,8 @@ form.search input.button {
 	padding: 3px 10px; 
 	font: bold 120% Tahoma, Verdana, Sans-Serif;	
 	color: #FFF;	
-	background: #B6B8BB;	
+	background: #B6B8BB;
+	text-align: left;	
 }
 #sidebar ul.sidemenu {
 	list-style: none;
@@ -250,6 +252,10 @@ form.search input.button {
 	padding: 2px 0; 		
 	background: none;
 }
+
+label#ctl00_Login1_UserNameLabel, label#ctl00_Login1_PasswordLabel {margin: 0;}
+input#ctl00_Login1_RememberMe {vertical-align: middle;}
+label[for="ctl00_Login1_RememberMe"] {display: inline; padding-left: 5px;}
 
 /* footer */
 #footer {

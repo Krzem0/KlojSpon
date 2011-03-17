@@ -76,7 +76,7 @@ textarea {
 	display:block;
 	color:#777;
 }
-input.button, .button input { 
+input.button, .button input, input[type="submit"] { 
 	margin: 0; 
 	font: bolder 12px Arial, Sans-serif; 
 	border: 1px solid #CCC; 
@@ -84,7 +84,7 @@ input.button, .button input {
 	background: #FFF;
 	color: #275F6C;
 }
-input.button:hover, .button input:hover {background-color: #EFEFEF;}
+input.button:hover, .button input:hover, input[type="submit"]:hover {background-color: #EFEFEF;}
 
 form.search {
 	padding: 0; margin: 0; 

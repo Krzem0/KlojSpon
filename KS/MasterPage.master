@@ -64,7 +64,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="right">
+                                            <td align="right" valign="top">
                                                 <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Hasło:</asp:Label>
                                             </td>
                                             <td>
@@ -84,7 +84,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="left" colspan="2" class="button">
+                                            <td align="center" colspan="2" class="button">
                                                 <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Zaloguj" ValidationGroup="ctl00$Login1" />
                                             </td>
                                         </tr>

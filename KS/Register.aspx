@@ -9,15 +9,12 @@
         ContinueButtonText="Kontynuuj" CreateUserButtonText="Utwórz" 
         FinishCompleteButtonText="Koniec" FinishPreviousButtonText="Wstecz" 
         StartNextButtonText="Dalej" StepNextButtonText="Dalej" 
-        StepPreviousButtonText="Wstecz">
+        StepPreviousButtonText="Wstecz" >
         <WizardSteps>
             <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
                 <ContentTemplate>
+                    <h1>Utwórz Konto</h1>
                     <table>
-                        <tr>
-                            <td align="center" colspan="2">
-                                Utwórz Konto</td>
-                        </tr>
                         <tr>
                             <td align="right">
                                 <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Login:</asp:Label>
@@ -103,8 +100,10 @@
                     </table>
                 </ContentTemplate>
             </asp:CreateUserWizardStep>
+            <div class="button">
             <asp:CompleteWizardStep ID="CompleteWizardStep1" runat="server">
             </asp:CompleteWizardStep>
+            </div>
         </WizardSteps>
     </asp:CreateUserWizard>
 </asp:Content>

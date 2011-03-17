@@ -119,7 +119,7 @@
                     <Items>
                         <asp:MenuItem Text="Profil" Value="Profil"></asp:MenuItem>
                         <asp:MenuItem Text="Zarządzanie zadaniami" Value="Zarządzanie zadaniami"></asp:MenuItem>
-                        <asp:MenuItem Text="Zarządzanie grupami" Value="Zarządzanie grupami" NavigateUrl="~/Prowadzący/ZarzadzanieGrupami.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Zarządzanie grupami" Value="Zarządzanie grupami" NavigateUrl="~/Prowadzacy/ZarzadzanieGrupami.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Zarządzanie użykownikami" Value="Zarządzanie użykownikami"></asp:MenuItem>
                         <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx"></asp:MenuItem>
                     </Items>

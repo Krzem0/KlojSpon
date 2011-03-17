@@ -9,7 +9,8 @@
         ContinueButtonText="Kontynuuj" CreateUserButtonText="Utwórz" 
         FinishCompleteButtonText="Koniec" FinishPreviousButtonText="Wstecz" 
         StartNextButtonText="Dalej" StepNextButtonText="Dalej" 
-        StepPreviousButtonText="Wstecz">
+        StepPreviousButtonText="Wstecz" 
+    UnknownErrorMessage="Twoje konto nie zostało utworzone. Spróbuj ponownie.">
         <WizardSteps>
             <asp:CreateUserWizardStep ID="CreateUserWizardStep1" runat="server">
                 <ContentTemplate>
@@ -104,6 +105,24 @@
                 </ContentTemplate>
             </asp:CreateUserWizardStep>
             <asp:CompleteWizardStep ID="CompleteWizardStep1" runat="server">
+                <ContentTemplate>
+                    <table>
+                        <tr>
+                            <td align="center" colspan="2">
+                                Zakończono</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Twoje konto zostało utworzone pomyślnie.</td>
+                        </tr>
+                        <tr>
+                            <td align="right" colspan="2">
+                                <asp:Button ID="ContinueButton" runat="server" CausesValidation="False" 
+                                    CommandName="Continue" Text="Kontynuuj" ValidationGroup="CreateUserWizard1" />
+                            </td>
+                        </tr>
+                    </table>
+                </ContentTemplate>
             </asp:CompleteWizardStep>
         </WizardSteps>
     </asp:CreateUserWizard>

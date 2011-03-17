@@ -79,6 +79,11 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td colspan="2">
+                                                Nie masz konta? <a href="Register.aspx">Zarejestruj się</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td align="center" colspan="2" style="color: Red;">
                                                 <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
                                             </td>

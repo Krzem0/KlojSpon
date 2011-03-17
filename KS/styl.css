@@ -104,6 +104,18 @@ form.search input.button {
 	padding: 1px 3px;
 	width: 60px;
 }
+table.lista {
+	width: 100%;
+	border: 1px solid #EFEFEF;
+}
+table.lista th {
+	background-color: #EDEDED;
+	text-align: center;
+}
+table.lista td {
+	border: 1px solid #E5E5E5;
+	padding: 3px;
+}
 
 /********************************************
    LAYOUT

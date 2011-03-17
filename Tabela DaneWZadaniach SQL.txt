@@ -1,0 +1,3 @@
+CREATE TABLE DaneWZadaniach(
+IdZadania INT NOT NULL,
+IdDanych INT NOT NULL)

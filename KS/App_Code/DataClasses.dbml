@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="krzemo.studentlive.pl" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=clea.mic.psnc.pl;Initial Catalog=krzemo.studentlive.pl;Persist Security Info=True;User ID=krzemo" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="krzemo_studentlive_plConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.aspnet_Roles" Member="aspnet_Roles">
+    <Type Name="aspnet_Role">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredRoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Association Name="aspnet_Role_aspnet_UsersInRole" Member="aspnet_UsersInRoles" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_UsersInRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_Users" Member="aspnet_Users">
+    <Type Name="aspnet_User">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredUserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileAlias" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="IsAnonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_aspnet_UsersInRole" Member="aspnet_UsersInRoles" ThisKey="UserId" OtherKey="UserId" Type="aspnet_UsersInRole" />
+      <Association Name="aspnet_User_StudenciWGrupach" Member="StudenciWGrupaches" ThisKey="UserId" OtherKey="IdStudenta" Type="StudenciWGrupach" />
+    </Type>
+  </Table>
+  <Table Name="dbo.aspnet_UsersInRoles" Member="aspnet_UsersInRoles">
+    <Type Name="aspnet_UsersInRole">
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="aspnet_Role_aspnet_UsersInRole" Member="aspnet_Role" ThisKey="RoleId" OtherKey="RoleId" Type="aspnet_Role" IsForeignKey="true" />
+      <Association Name="aspnet_User_aspnet_UsersInRole" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DaneWeWy" Member="DaneWeWies">
+    <Type Name="DaneWeWy">
+      <Column Name="IdDanych" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="We" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Wy" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="DaneWeWy_DaneWZadaniach" Member="DaneWZadaniaches" ThisKey="IdDanych" OtherKey="IdDanych" Type="DaneWZadaniach" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DaneWZadaniach" Member="DaneWZadaniaches">
+    <Type Name="DaneWZadaniach">
+      <Column Name="IdZadania" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdDanych" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="DaneWeWy_DaneWZadaniach" Member="DaneWeWy" ThisKey="IdDanych" OtherKey="IdDanych" Type="DaneWeWy" IsForeignKey="true" />
+      <Association Name="Zadania_DaneWZadaniach" Member="Zadania" ThisKey="IdZadania" OtherKey="IdZadania" Type="Zadania" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Grupy" Member="Grupies">
+    <Type Name="Grupy">
+      <Column Name="IdGrupy" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nazwa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DataUtworzenia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdWlasciciela" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CzyUsuniety" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Grupy_StudenciWGrupach" Member="StudenciWGrupaches" ThisKey="IdGrupy" OtherKey="IdGrupy" Type="StudenciWGrupach" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StudenciWGrupach" Member="StudenciWGrupaches">
+    <Type Name="StudenciWGrupach">
+      <Column Name="IdGrupy" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdStudenta" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DataDodania" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="aspnet_User_StudenciWGrupach" Member="aspnet_User" ThisKey="IdStudenta" OtherKey="UserId" Type="aspnet_User" IsForeignKey="true" />
+      <Association Name="Grupy_StudenciWGrupach" Member="Grupy" ThisKey="IdGrupy" OtherKey="IdGrupy" Type="Grupy" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Zadania" Member="Zadanias">
+    <Type Name="Zadania">
+      <Column Name="IdZadania" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tytul" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Opis" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DataOtwarcia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DataZamkniecia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Zadania_DaneWZadaniach" Member="DaneWZadaniaches" ThisKey="IdZadania" OtherKey="IdZadania" Type="DaneWZadaniach" />
+    </Type>
+  </Table>
+</Database>

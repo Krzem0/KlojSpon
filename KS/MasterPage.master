@@ -79,6 +79,11 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td colspan="2">
+                                                Nie masz konta? <a href="Register.aspx">Zarejestruj się</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td align="center" colspan="2" style="color: Red;">
                                                 <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
                                             </td>
@@ -114,7 +119,7 @@
                     <Items>
                         <asp:MenuItem Text="Profil" Value="Profil"></asp:MenuItem>
                         <asp:MenuItem Text="Zarządzanie zadaniami" Value="Zarządzanie zadaniami"></asp:MenuItem>
-                        <asp:MenuItem Text="Zarządzanie grupami" Value="Zarządzanie grupami"></asp:MenuItem>
+                        <asp:MenuItem Text="Zarządzanie grupami" Value="Zarządzanie grupami" NavigateUrl="~/Prowadzący/ZarzadzanieGrupami.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Zarządzanie użykownikami" Value="Zarządzanie użykownikami"></asp:MenuItem>
                         <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx"></asp:MenuItem>
                     </Items>

@@ -28,11 +28,11 @@
         <!-- / header -->
         <div id="menu">
             <ul>
-                <li class="active"><a href="Default.aspx"><span>Strona główna</span></a></li>
-                <li><a href="Default.aspx"><span>Zadania</span></a></li>
-                <li><a href="Default.aspx"><span>Materiały</span></a></li>
-                <li><a href="Default.aspx"><span>Zasady</span></a></li>
-                <li><a href="Default.aspx"><span>Ranking</span></a></li>
+                <li class="active"><a href="/Default.aspx"><span>Strona główna</span></a></li>
+                <li><a href="/Default.aspx"><span>Zadania</span></a></li>
+                <li><a href="/Default.aspx"><span>Materiały</span></a></li>
+                <li><a href="/Default.aspx"><span>Zasady</span></a></li>
+                <li><a href="/Default.aspx"><span>Ranking</span></a></li>
             </ul>
         </div>
         <!-- / menu -->

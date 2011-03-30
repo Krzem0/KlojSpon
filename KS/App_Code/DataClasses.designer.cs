@@ -53,6 +53,9 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void InsertZadania(Zadania instance);
   partial void UpdateZadania(Zadania instance);
   partial void DeleteZadania(Zadania instance);
+  partial void InsertDaneUsera(DaneUsera instance);
+  partial void UpdateDaneUsera(DaneUsera instance);
+  partial void DeleteDaneUsera(DaneUsera instance);
   #endregion
 	
 	public DataClassesDataContext() : 
@@ -146,6 +149,14 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<Zadania>();
+		}
+	}
+	
+	public System.Data.Linq.Table<DaneUsera> DaneUseras
+	{
+		get
+		{
+			return this.GetTable<DaneUsera>();
 		}
 	}
 }
@@ -360,6 +371,8 @@ public partial class aspnet_User : INotifyPropertyChanging, INotifyPropertyChang
 	
 	private EntitySet<StudenciWGrupach> _StudenciWGrupaches;
 	
+	private EntityRef<DaneUsera> _DaneUsera;
+	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -384,6 +397,7 @@ public partial class aspnet_User : INotifyPropertyChanging, INotifyPropertyChang
 	{
 		this._aspnet_UsersInRoles = new EntitySet<aspnet_UsersInRole>(new Action<aspnet_UsersInRole>(this.attach_aspnet_UsersInRoles), new Action<aspnet_UsersInRole>(this.detach_aspnet_UsersInRoles));
 		this._StudenciWGrupaches = new EntitySet<StudenciWGrupach>(new Action<StudenciWGrupach>(this.attach_StudenciWGrupaches), new Action<StudenciWGrupach>(this.detach_StudenciWGrupaches));
+		this._DaneUsera = default(EntityRef<DaneUsera>);
 		OnCreated();
 	}
 	
@@ -418,6 +432,10 @@ public partial class aspnet_User : INotifyPropertyChanging, INotifyPropertyChang
 		{
 			if ((this._UserId != value))
 			{
+				if (this._DaneUsera.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
 				this.OnUserIdChanging(value);
 				this.SendPropertyChanging();
 				this._UserId = value;
@@ -550,6 +568,40 @@ public partial class aspnet_User : INotifyPropertyChanging, INotifyPropertyChang
 		set
 		{
 			this._StudenciWGrupaches.Assign(value);
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DaneUsera_aspnet_User", Storage="_DaneUsera", ThisKey="UserId", OtherKey="UserId", IsForeignKey=true)]
+	public DaneUsera DaneUsera
+	{
+		get
+		{
+			return this._DaneUsera.Entity;
+		}
+		set
+		{
+			DaneUsera previousValue = this._DaneUsera.Entity;
+			if (((previousValue != value) 
+						|| (this._DaneUsera.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._DaneUsera.Entity = null;
+					previousValue.aspnet_User = null;
+				}
+				this._DaneUsera.Entity = value;
+				if ((value != null))
+				{
+					value.aspnet_User = this;
+					this._UserId = value.UserId;
+				}
+				else
+				{
+					this._UserId = default(System.Guid);
+				}
+				this.SendPropertyChanged("DaneUsera");
+			}
 		}
 	}
 	
@@ -1633,6 +1685,148 @@ public partial class Zadania : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		this.SendPropertyChanging();
 		entity.Zadania = null;
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DaneUsera")]
+public partial class DaneUsera : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private System.Guid _UserId;
+	
+	private string _Name;
+	
+	private string _Surname;
+	
+	private EntityRef<aspnet_User> _aspnet_User;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUserIdChanging(System.Guid value);
+    partial void OnUserIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnSurnameChanging(string value);
+    partial void OnSurnameChanged();
+    #endregion
+	
+	public DaneUsera()
+	{
+		this._aspnet_User = default(EntityRef<aspnet_User>);
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+	public System.Guid UserId
+	{
+		get
+		{
+			return this._UserId;
+		}
+		set
+		{
+			if ((this._UserId != value))
+			{
+				this.OnUserIdChanging(value);
+				this.SendPropertyChanging();
+				this._UserId = value;
+				this.SendPropertyChanged("UserId");
+				this.OnUserIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
+	public string Name
+	{
+		get
+		{
+			return this._Name;
+		}
+		set
+		{
+			if ((this._Name != value))
+			{
+				this.OnNameChanging(value);
+				this.SendPropertyChanging();
+				this._Name = value;
+				this.SendPropertyChanged("Name");
+				this.OnNameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Surname", DbType="VarChar(70)")]
+	public string Surname
+	{
+		get
+		{
+			return this._Surname;
+		}
+		set
+		{
+			if ((this._Surname != value))
+			{
+				this.OnSurnameChanging(value);
+				this.SendPropertyChanging();
+				this._Surname = value;
+				this.SendPropertyChanged("Surname");
+				this.OnSurnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DaneUsera_aspnet_User", Storage="_aspnet_User", ThisKey="UserId", OtherKey="UserId", IsUnique=true, IsForeignKey=false)]
+	public aspnet_User aspnet_User
+	{
+		get
+		{
+			return this._aspnet_User.Entity;
+		}
+		set
+		{
+			aspnet_User previousValue = this._aspnet_User.Entity;
+			if (((previousValue != value) 
+						|| (this._aspnet_User.HasLoadedOrAssignedValue == false)))
+			{
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._aspnet_User.Entity = null;
+					previousValue.DaneUsera = null;
+				}
+				this._aspnet_User.Entity = value;
+				if ((value != null))
+				{
+					value.DaneUsera = this;
+				}
+				this.SendPropertyChanged("aspnet_User");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
 	}
 }
 #pragma warning restore 1591

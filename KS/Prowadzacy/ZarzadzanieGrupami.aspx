@@ -1,76 +1,76 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ZarzadzanieGrupami.aspx.cs" Inherits="Prowadzący_ZarzadzanieGrupami" %>
+﻿<%@ Page Title="Zarządzanie grupami" Language="C#" MasterPageFile="~/MasterPage.master"
+    AutoEventWireup="true" CodeFile="ZarzadzanieGrupami.aspx.cs" Inherits="Prowadzący_ZarzadzanieGrupami" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<h1>Zarządzanie grupami</h1>
-<h3>Lista grup</h3>
-<table class="lista">
-    <thead>
-        <tr>
-            <th>id</th>
-            <th>nazwa grupy</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td align="center">1.</td>
-            <td><a href="">II rok IOG, gr I</a></td>
-        </tr>
-        <tr>
-            <td align="center">2.</td>
-            <td><a href="">II rok IOG, gr II</a></td>
-        </tr>
-        <tr>
-            <td align="center">3.</td>
-            <td><a href="">III rok IOG, gr I</a></td>
-        </tr>
-        <tr>
-            <td align="center">4.</td>
-            <td><a href="">III rok IOG, gr II</a></td>
-        </tr>
-    </tbody>
-</table>
-<h3>Dodawanie grupy</h3>
-<form>
-<label>Nazwa grupy: <input type="text" /><input type="submit" /></label>
-
-<h1>Grupa III rok IOG, gr I</h1>
-<p>utworzona: 12.03.11 przez: Roman Stefański</p>
-<h3>Lista członków</h3>
-<table class="lista">
-    <thead>
-        <tr>
-            <th>id</th>
-            <th>imię i nazwisko</th>
-            <th>nr indeksu</th>
-            <th>&nbsp</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td align="center">1.</td>
-            <td><a href="">Zbysław Jakotaki</a></td>
-            <td align="center">564331</td>
-            <td><a href="">usuń</a></td>
-        </tr>
-        <tr>
-            <td align="center">2.</td>
-            <td><a href="">Jan Kowalikowski</a></td>
-            <td align="center">563331</td>
-            <td><a href="">usuń</a></td>
-        </tr>
-        <tr>
-            <td align="center">3.</td>
-            <td><a href="">Ktoś Jeszcze</a></td>
-            <td align="center">164331</td>
-            <td><a href="">usuń</a></td>
-        </tr>
-    </tbody>
-</table>
-
-<a href="">Dodaj użytkownika/ów do grupy</a>
-
-</form>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <h1>
+        Zarządzanie grupami</h1>
+    <h3>
+        Lista grup</h3>
+    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" EnableModelValidation="True">
+        <EmptyDataTemplate>
+            <table runat="server">
+                <tr>
+                    <td>
+                        Nie posiadasz żadnej grupy.
+                    </td>
+                </tr>
+            </table>
+        </EmptyDataTemplate>
+        <ItemTemplate>
+            <tr style="">
+                <td>
+                    <asp:LinkButton ID="NazwaLinkButton" runat="server" OnClick="NazwaLinkButton_Click"
+                        Text='<%# Eval("Nazwa") %>'></asp:LinkButton>
+                </td>
+                <td>
+                    <asp:Label ID="DataUtworzeniaLabel" runat="server" Text='<%# Eval("DataUtworzenia") %>' />
+                </td>
+            </tr>
+        </ItemTemplate>
+        <LayoutTemplate>
+            <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+                <tr runat="server" style="">
+                    <th runat="server">
+                        Nazwa
+                    </th>
+                    <th runat="server">
+                        DataUtworzenia
+                    </th>
+                </tr>
+                <tr id="itemPlaceholder" runat="server">
+                </tr>
+            </table>
+        </LayoutTemplate>
+        <SelectedItemTemplate>
+            <tr style="">
+                <td>
+                    <asp:Label ID="NazwaLabel" runat="server" Text='<%# Eval("Nazwa") %>' />
+                </td>
+                <td>
+                    <asp:Label ID="DataUtworzeniaLabel" runat="server" Text='<%# Eval("DataUtworzenia") %>' />
+                </td>
+            </tr>
+        </SelectedItemTemplate>
+    </asp:ListView>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyConnectionString %>"
+        SelectCommand="SELECT [Nazwa], [DataUtworzenia] FROM [Grupy] WHERE ([IdWlasciciela] = @IdWlasciciela)">
+        <SelectParameters>
+            <asp:SessionParameter DefaultValue="0" Name="IdWlasciciela" SessionField="IdProwadzacego"
+                Type="Object" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <h3>
+        Dodawanie grupy</h3>
+    <asp:Label ID="GroupNameLabel" runat="server" Text="Nazwa grupy: "></asp:Label>
+    <asp:TextBox ID="GroupNameTextBox" runat="server" ValidationGroup="GroupName"></asp:TextBox><asp:RequiredFieldValidator
+        ID="ChoosenGroupName" runat="server" ErrorMessage="Musisz podać nazwę grupy"
+        ControlToValidate="GroupNameTextBox" ValidationGroup="GroupName">*</asp:RequiredFieldValidator>
+    <asp:Button ID="GroupNameButton" runat="server" Text="Dodaj grupę" OnClick="GroupNameButton_Click"
+        ValidationGroup="GroupName" />
+    <br />
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="GroupName" />
+    <br />
+    <asp:Label ID="GroupNameExistLabel" runat="server" Visible="False"></asp:Label>
 </asp:Content>
-

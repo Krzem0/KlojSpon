@@ -21,6 +21,7 @@
       <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="aspnet_User_aspnet_UsersInRole" Member="aspnet_UsersInRoles" ThisKey="UserId" OtherKey="UserId" Type="aspnet_UsersInRole" />
       <Association Name="aspnet_User_StudenciWGrupach" Member="StudenciWGrupaches" ThisKey="UserId" OtherKey="IdStudenta" Type="StudenciWGrupach" />
+      <Association Name="DaneUsera_aspnet_User" Member="DaneUsera" ThisKey="UserId" OtherKey="UserId" Type="DaneUsera" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.aspnet_UsersInRoles" Member="aspnet_UsersInRoles">
@@ -74,6 +75,14 @@
       <Column Name="DataOtwarcia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="DataZamkniecia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="Zadania_DaneWZadaniach" Member="DaneWZadaniaches" ThisKey="IdZadania" OtherKey="IdZadania" Type="DaneWZadaniach" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DaneUsera" Member="DaneUseras">
+    <Type Name="DaneUsera">
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Surname" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Association Name="DaneUsera_aspnet_User" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" Cardinality="One" />
     </Type>
   </Table>
 </Database>

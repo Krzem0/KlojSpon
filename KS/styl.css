@@ -254,7 +254,7 @@ table#ctl00_ContentPlaceHolder1_EnableStudentsList_itemPlaceholderContainer labe
 	margin: 3px 0px 8px 0; padding: 0;
 	text-decoration: none;	
 }
-#sidebar ul.sidemenu li, #sidebar table table tr td {
+#sidebar ul.sidemenu li, #sidebar #ctl00_MenuProwadzacy span {
 	border-bottom: 1px solid #EFF0F1;
 	background: url('images/bullet.gif') no-repeat 2px 3px ;
 	padding: 2px 0 2px 25px;

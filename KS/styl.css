@@ -84,6 +84,12 @@ input.button, .button input, input[type="submit"], #ctl00_LoginStatus1 {
 	background: #FFF;
 	color: #275F6C;
 }
+#ctl00_LoginStatus1 {
+	display: block;
+    margin: 4px auto;
+    text-align: center;
+    width: 70px;
+}
 input.button:hover, .button input:hover, input[type="submit"]:hover, #ctl00_LoginStatus1:hover {background-color: #EFEFEF;}
 
 form.search {
@@ -254,7 +260,7 @@ table#ctl00_ContentPlaceHolder1_EnableStudentsList_itemPlaceholderContainer labe
 	margin: 3px 0px 8px 0; padding: 0;
 	text-decoration: none;	
 }
-#sidebar ul.sidemenu li, #sidebar #ctl00_MenuProwadzacy span {
+#sidebar ul.sidemenu li, #sidebar #ctl00_MenuProwadzacy span, #ctl00_MenuProwadzacy table td{
 	border-bottom: 1px solid #EFF0F1;
 	background: url('images/bullet.gif') no-repeat 2px 3px ;
 	padding: 2px 0 2px 25px;

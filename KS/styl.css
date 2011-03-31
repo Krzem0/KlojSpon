@@ -76,7 +76,7 @@ textarea {
 	display:block;
 	color:#777;
 }
-input.button, .button input, input[type="submit"] { 
+input.button, .button input, input[type="submit"], #ctl00_LoginStatus1 { 
 	margin: 0; 
 	font: bolder 12px Arial, Sans-serif; 
 	border: 1px solid #CCC; 
@@ -84,7 +84,7 @@ input.button, .button input, input[type="submit"] {
 	background: #FFF;
 	color: #275F6C;
 }
-input.button:hover, .button input:hover, input[type="submit"]:hover {background-color: #EFEFEF;}
+input.button:hover, .button input:hover, input[type="submit"]:hover, #ctl00_LoginStatus1:hover {background-color: #EFEFEF;}
 
 form.search {
 	padding: 0; margin: 0; 
@@ -116,6 +116,10 @@ table.lista td {
 	border: 1px solid #E5E5E5;
 	padding: 3px;
 }
+
+#main > table { width: 100%;}
+#main > table > tr > th, #main > table > tr > td {padding: 3px 5px;}
+table#ctl00_ContentPlaceHolder1_EnableStudentsList_itemPlaceholderContainer label {display: inline;}
 
 /********************************************
    LAYOUT
@@ -250,7 +254,7 @@ table.lista td {
 	margin: 3px 0px 8px 0; padding: 0;
 	text-decoration: none;	
 }
-#sidebar ul.sidemenu li {
+#sidebar ul.sidemenu li, #sidebar table table tr td {
 	border-bottom: 1px solid #EFF0F1;
 	background: url('images/bullet.gif') no-repeat 2px 3px ;
 	padding: 2px 0 2px 25px;

@@ -50,12 +50,12 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void InsertStudenciWGrupach(StudenciWGrupach instance);
   partial void UpdateStudenciWGrupach(StudenciWGrupach instance);
   partial void DeleteStudenciWGrupach(StudenciWGrupach instance);
-  partial void InsertZadania(Zadania instance);
-  partial void UpdateZadania(Zadania instance);
-  partial void DeleteZadania(Zadania instance);
   partial void InsertDaneUsera(DaneUsera instance);
   partial void UpdateDaneUsera(DaneUsera instance);
   partial void DeleteDaneUsera(DaneUsera instance);
+  partial void InsertZadania(Zadania instance);
+  partial void UpdateZadania(Zadania instance);
+  partial void DeleteZadania(Zadania instance);
   #endregion
 	
 	public DataClassesDataContext() : 
@@ -144,19 +144,19 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
-	public System.Data.Linq.Table<Zadania> Zadanias
-	{
-		get
-		{
-			return this.GetTable<Zadania>();
-		}
-	}
-	
 	public System.Data.Linq.Table<DaneUsera> DaneUseras
 	{
 		get
 		{
 			return this.GetTable<DaneUsera>();
+		}
+	}
+	
+	public System.Data.Linq.Table<Zadania> Zadanias
+	{
+		get
+		{
+			return this.GetTable<Zadania>();
 		}
 	}
 }
@@ -1502,192 +1502,6 @@ public partial class StudenciWGrupach : INotifyPropertyChanging, INotifyProperty
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Zadania")]
-public partial class Zadania : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _IdZadania;
-	
-	private string _Tytul;
-	
-	private string _Opis;
-	
-	private System.DateTime _DataOtwarcia;
-	
-	private System.DateTime _DataZamkniecia;
-	
-	private EntitySet<DaneWZadaniach> _DaneWZadaniaches;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdZadaniaChanging(int value);
-    partial void OnIdZadaniaChanged();
-    partial void OnTytulChanging(string value);
-    partial void OnTytulChanged();
-    partial void OnOpisChanging(string value);
-    partial void OnOpisChanged();
-    partial void OnDataOtwarciaChanging(System.DateTime value);
-    partial void OnDataOtwarciaChanged();
-    partial void OnDataZamknieciaChanging(System.DateTime value);
-    partial void OnDataZamknieciaChanged();
-    #endregion
-	
-	public Zadania()
-	{
-		this._DaneWZadaniaches = new EntitySet<DaneWZadaniach>(new Action<DaneWZadaniach>(this.attach_DaneWZadaniaches), new Action<DaneWZadaniach>(this.detach_DaneWZadaniaches));
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdZadania", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-	public int IdZadania
-	{
-		get
-		{
-			return this._IdZadania;
-		}
-		set
-		{
-			if ((this._IdZadania != value))
-			{
-				this.OnIdZadaniaChanging(value);
-				this.SendPropertyChanging();
-				this._IdZadania = value;
-				this.SendPropertyChanged("IdZadania");
-				this.OnIdZadaniaChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tytul", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-	public string Tytul
-	{
-		get
-		{
-			return this._Tytul;
-		}
-		set
-		{
-			if ((this._Tytul != value))
-			{
-				this.OnTytulChanging(value);
-				this.SendPropertyChanging();
-				this._Tytul = value;
-				this.SendPropertyChanged("Tytul");
-				this.OnTytulChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Opis", DbType="NText NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-	public string Opis
-	{
-		get
-		{
-			return this._Opis;
-		}
-		set
-		{
-			if ((this._Opis != value))
-			{
-				this.OnOpisChanging(value);
-				this.SendPropertyChanging();
-				this._Opis = value;
-				this.SendPropertyChanged("Opis");
-				this.OnOpisChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataOtwarcia", DbType="DateTime NOT NULL")]
-	public System.DateTime DataOtwarcia
-	{
-		get
-		{
-			return this._DataOtwarcia;
-		}
-		set
-		{
-			if ((this._DataOtwarcia != value))
-			{
-				this.OnDataOtwarciaChanging(value);
-				this.SendPropertyChanging();
-				this._DataOtwarcia = value;
-				this.SendPropertyChanged("DataOtwarcia");
-				this.OnDataOtwarciaChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataZamkniecia", DbType="DateTime NOT NULL")]
-	public System.DateTime DataZamkniecia
-	{
-		get
-		{
-			return this._DataZamkniecia;
-		}
-		set
-		{
-			if ((this._DataZamkniecia != value))
-			{
-				this.OnDataZamknieciaChanging(value);
-				this.SendPropertyChanging();
-				this._DataZamkniecia = value;
-				this.SendPropertyChanged("DataZamkniecia");
-				this.OnDataZamknieciaChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Zadania_DaneWZadaniach", Storage="_DaneWZadaniaches", ThisKey="IdZadania", OtherKey="IdZadania")]
-	public EntitySet<DaneWZadaniach> DaneWZadaniaches
-	{
-		get
-		{
-			return this._DaneWZadaniaches;
-		}
-		set
-		{
-			this._DaneWZadaniaches.Assign(value);
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-	
-	private void attach_DaneWZadaniaches(DaneWZadaniach entity)
-	{
-		this.SendPropertyChanging();
-		entity.Zadania = this;
-	}
-	
-	private void detach_DaneWZadaniaches(DaneWZadaniach entity)
-	{
-		this.SendPropertyChanging();
-		entity.Zadania = null;
-	}
-}
-
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DaneUsera")]
 public partial class DaneUsera : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -1827,6 +1641,216 @@ public partial class DaneUsera : INotifyPropertyChanging, INotifyPropertyChanged
 		{
 			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Zadania")]
+public partial class Zadania : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _IdZadania;
+	
+	private string _Tytul;
+	
+	private string _Opis;
+	
+	private System.DateTime _DataOtwarcia;
+	
+	private System.DateTime _DataZamkniecia;
+	
+	private System.Guid _IdWlasciciela;
+	
+	private EntitySet<DaneWZadaniach> _DaneWZadaniaches;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdZadaniaChanging(int value);
+    partial void OnIdZadaniaChanged();
+    partial void OnTytulChanging(string value);
+    partial void OnTytulChanged();
+    partial void OnOpisChanging(string value);
+    partial void OnOpisChanged();
+    partial void OnDataOtwarciaChanging(System.DateTime value);
+    partial void OnDataOtwarciaChanged();
+    partial void OnDataZamknieciaChanging(System.DateTime value);
+    partial void OnDataZamknieciaChanged();
+    partial void OnIdWlascicielaChanging(System.Guid value);
+    partial void OnIdWlascicielaChanged();
+    #endregion
+	
+	public Zadania()
+	{
+		this._DaneWZadaniaches = new EntitySet<DaneWZadaniach>(new Action<DaneWZadaniach>(this.attach_DaneWZadaniaches), new Action<DaneWZadaniach>(this.detach_DaneWZadaniaches));
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdZadania", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int IdZadania
+	{
+		get
+		{
+			return this._IdZadania;
+		}
+		set
+		{
+			if ((this._IdZadania != value))
+			{
+				this.OnIdZadaniaChanging(value);
+				this.SendPropertyChanging();
+				this._IdZadania = value;
+				this.SendPropertyChanged("IdZadania");
+				this.OnIdZadaniaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tytul", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+	public string Tytul
+	{
+		get
+		{
+			return this._Tytul;
+		}
+		set
+		{
+			if ((this._Tytul != value))
+			{
+				this.OnTytulChanging(value);
+				this.SendPropertyChanging();
+				this._Tytul = value;
+				this.SendPropertyChanged("Tytul");
+				this.OnTytulChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Opis", DbType="NText NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+	public string Opis
+	{
+		get
+		{
+			return this._Opis;
+		}
+		set
+		{
+			if ((this._Opis != value))
+			{
+				this.OnOpisChanging(value);
+				this.SendPropertyChanging();
+				this._Opis = value;
+				this.SendPropertyChanged("Opis");
+				this.OnOpisChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataOtwarcia", DbType="DateTime NOT NULL")]
+	public System.DateTime DataOtwarcia
+	{
+		get
+		{
+			return this._DataOtwarcia;
+		}
+		set
+		{
+			if ((this._DataOtwarcia != value))
+			{
+				this.OnDataOtwarciaChanging(value);
+				this.SendPropertyChanging();
+				this._DataOtwarcia = value;
+				this.SendPropertyChanged("DataOtwarcia");
+				this.OnDataOtwarciaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataZamkniecia", DbType="DateTime NOT NULL")]
+	public System.DateTime DataZamkniecia
+	{
+		get
+		{
+			return this._DataZamkniecia;
+		}
+		set
+		{
+			if ((this._DataZamkniecia != value))
+			{
+				this.OnDataZamknieciaChanging(value);
+				this.SendPropertyChanging();
+				this._DataZamkniecia = value;
+				this.SendPropertyChanged("DataZamkniecia");
+				this.OnDataZamknieciaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdWlasciciela", DbType="UniqueIdentifier NOT NULL")]
+	public System.Guid IdWlasciciela
+	{
+		get
+		{
+			return this._IdWlasciciela;
+		}
+		set
+		{
+			if ((this._IdWlasciciela != value))
+			{
+				this.OnIdWlascicielaChanging(value);
+				this.SendPropertyChanging();
+				this._IdWlasciciela = value;
+				this.SendPropertyChanged("IdWlasciciela");
+				this.OnIdWlascicielaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Zadania_DaneWZadaniach", Storage="_DaneWZadaniaches", ThisKey="IdZadania", OtherKey="IdZadania")]
+	public EntitySet<DaneWZadaniach> DaneWZadaniaches
+	{
+		get
+		{
+			return this._DaneWZadaniaches;
+		}
+		set
+		{
+			this._DaneWZadaniaches.Assign(value);
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+	
+	private void attach_DaneWZadaniaches(DaneWZadaniach entity)
+	{
+		this.SendPropertyChanging();
+		entity.Zadania = this;
+	}
+	
+	private void detach_DaneWZadaniaches(DaneWZadaniach entity)
+	{
+		this.SendPropertyChanging();
+		entity.Zadania = null;
 	}
 }
 #pragma warning restore 1591

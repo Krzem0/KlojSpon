@@ -102,7 +102,7 @@
                 <asp:LoginView ID="LoginView1" runat="server">
                 </asp:LoginView>
                 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-                <asp:LoginName ID="LoginName1" runat="server" />
+                <p class="ac"><asp:LoginName ID="LoginName1" runat="server" /></p>
                 <asp:Label ID="TwojeKontoLabel" runat="server" Text="<h2>Twoje konto</h2>" Visible="false"></asp:Label>
                 <!-- Menu dla studenta -->
                 <asp:Menu ID="MenuStudent" runat="server" Visible="False">
@@ -118,7 +118,7 @@
                 <asp:Menu ID="MenuProwadzacy" runat="server" Visible="false">
                     <Items>
                         <asp:MenuItem Text="Profil" Value="Profil"></asp:MenuItem>
-                        <asp:MenuItem Text="Zarządzanie zadaniami" Value="Zarządzanie zadaniami"></asp:MenuItem>
+                        <asp:MenuItem Text="Zarządzanie zadaniami" Value="Zarządzanie zadaniami" NavigateUrl="~/Prowadzacy/ZarzadzanieZadaniami.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Zarządzanie grupami" Value="Zarządzanie grupami" NavigateUrl="~/Prowadzacy/ZarzadzanieGrupami.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Zarządzanie użykownikami" Value="Zarządzanie użykownikami"></asp:MenuItem>
                         <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx"></asp:MenuItem>

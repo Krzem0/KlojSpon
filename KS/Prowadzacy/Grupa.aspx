@@ -7,7 +7,7 @@
     <h1>
         <asp:Label ID="GroupNameLabel" runat="server" Text=""></asp:Label></h1>
     <p>
-        utworzona: 12.03.11 przez: Roman Stefański</p>
+        <asp:Label ID="DescriptionLabel" runat="server" Text="Label"></asp:Label></p>
     <h3>
         Lista członków</h3>
     <asp:ListView ID="StudentsInGroupList" runat="server" DataKeyNames="UserId">

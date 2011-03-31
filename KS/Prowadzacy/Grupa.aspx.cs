@@ -18,6 +18,7 @@ public partial class Prowadzacy_Grupa : System.Web.UI.Page
             DataClassesDataContext db = new DataClassesDataContext();
             ReadUsersInGroupList(db);
             ReadFreeUsers(db);
+            DescriptionLabelText(db);
         }
     }
     protected void AddButton_Click(object sender, EventArgs e)
@@ -88,6 +89,11 @@ public partial class Prowadzacy_Grupa : System.Web.UI.Page
         GroupNameExistLabel.Text = text;
         GroupNameExistLabel.ForeColor = Color.Red;
         GroupNameExistLabel.Visible = true;
+    }
+    private void DescriptionLabelText(DataClassesDataContext db)
+    {
+        Grupy grupa = db.Grupies.First(g => g.Nazwa == (string) Session["NazwaGrupy"]);
+        DescriptionLabel.Text = "utworzona: "+ grupa.DataUtworzenia.Date.ToShortDateString();
     }
 
     protected void AddCheckedButton_Click(object sender, EventArgs e)

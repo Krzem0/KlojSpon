@@ -20,7 +20,7 @@ public partial class Prowadzący_ZarzadzanieGrupami : System.Web.UI.Page
             }
             catch (Exception)
             {
-            }       
+            }
         }
     }
     protected void GroupNameButton_Click(object sender, EventArgs e)

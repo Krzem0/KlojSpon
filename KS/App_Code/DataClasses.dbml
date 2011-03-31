@@ -67,6 +67,14 @@
       <Association Name="Grupy_StudenciWGrupach" Member="Grupy" ThisKey="IdGrupy" OtherKey="IdGrupy" Type="Grupy" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.DaneUsera" Member="DaneUseras">
+    <Type Name="DaneUsera">
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Surname" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Association Name="DaneUsera_aspnet_User" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" Cardinality="One" />
+    </Type>
+  </Table>
   <Table Name="dbo.Zadania" Member="Zadanias">
     <Type Name="Zadania">
       <Column Name="IdZadania" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -74,15 +82,8 @@
       <Column Name="Opis" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
       <Column Name="DataOtwarcia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="DataZamkniecia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdWlasciciela" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
       <Association Name="Zadania_DaneWZadaniach" Member="DaneWZadaniaches" ThisKey="IdZadania" OtherKey="IdZadania" Type="DaneWZadaniach" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DaneUsera" Member="DaneUseras">
-    <Type Name="DaneUsera">
-      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Surname" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
-      <Association Name="DaneUsera_aspnet_User" Member="aspnet_User" ThisKey="UserId" OtherKey="UserId" Type="aspnet_User" Cardinality="One" />
     </Type>
   </Table>
 </Database>

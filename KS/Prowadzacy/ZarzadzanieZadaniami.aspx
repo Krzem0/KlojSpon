@@ -1,5 +1,5 @@
-﻿<%@ Page Title="Zarządzanie zadaniami" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"
-    CodeFile="ZarzadzanieZadaniami.aspx.cs" Inherits="Prowadzacy_ZarzadzanieZadaniami" %>
+﻿<%@ Page Title="Zarządzanie zadaniami" Language="C#" MasterPageFile="~/MasterPage.master"
+    AutoEventWireup="true" CodeFile="ZarzadzanieZadaniami.aspx.cs" Inherits="Prowadzacy_ZarzadzanieZadaniami" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -8,7 +8,7 @@
         Zarządzanie zadaniami</h1>
     <h3>
         Lista zadań</h3>
-    <asp:ListView runat="server" ID="ZadanieListView">
+    <asp:ListView runat="server" ID="ZadanieListView" DataKeyNames="IdZadania" OnSelectedIndexChanging="ZadanieListView_SelectedIndexChanging">
         <LayoutTemplate>
             <table id="itemPlaceholderContainer" runat="server" border="0" style="">
                 <tr id="Tr1" runat="server" style="">
@@ -29,7 +29,8 @@
         <ItemTemplate>
             <tr style="">
                 <td>
-                    <asp:LinkButton ID="NazwaLinkButton" runat="server" Text='<%# Eval("Tytul") %>'></asp:LinkButton>
+                    <asp:LinkButton ID="NazwaLinkButton" runat="server" Text='<%# Eval("Tytul") %>'
+                        CommandName="Select"></asp:LinkButton>
                 </td>
                 <td>
                     <asp:Label ID="DataOtwarciaLabel" runat="server" Text='<%# Eval("DataOtwarcia") %>' />

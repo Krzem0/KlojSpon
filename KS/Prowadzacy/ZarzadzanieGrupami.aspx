@@ -64,7 +64,8 @@
     <h3>
         Dodawanie grupy</h3>
     <asp:Label ID="GroupNameLabel" runat="server" Text="Nazwa grupy: "></asp:Label>
-    <asp:TextBox ID="GroupNameTextBox" runat="server" ValidationGroup="GroupName"></asp:TextBox><asp:RequiredFieldValidator
+    <asp:TextBox ID="GroupNameTextBox" runat="server" ValidationGroup="GroupName"></asp:TextBox>
+    <asp:RequiredFieldValidator
         ID="ChoosenGroupName" runat="server" ErrorMessage="Musisz podać nazwę grupy"
         ControlToValidate="GroupNameTextBox" ValidationGroup="GroupName">*</asp:RequiredFieldValidator>
     <asp:Button ID="GroupNameButton" runat="server" Text="Dodaj grupę" OnClick="GroupNameButton_Click"

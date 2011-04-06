@@ -14,7 +14,6 @@ public partial class Prowadzacy_ZarzadzanieZadaniami : System.Web.UI.Page
         WczytajListeZadan(db);
     }
 
-
     private void WczytajListeZadan(DataClassesDataContext db)
     {
         var querry = from zadania in db.Zadanias
@@ -22,5 +21,11 @@ public partial class Prowadzacy_ZarzadzanieZadaniami : System.Web.UI.Page
                      select zadania;
         ZadanieListView.DataSource = querry;
         ZadanieListView.DataBind();
+    }
+
+    protected void ZadanieListView_SelectedIndexChanging(object sender, ListViewSelectEventArgs e)
+    {
+        Session["IdZadania"] = ZadanieListView.DataKeys[e.NewSelectedIndex];
+        Response.Redirect(@"Zadanie.aspx");
     }
 }

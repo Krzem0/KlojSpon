@@ -2,6 +2,24 @@
     AutoEventWireup="true" CodeFile="DodajZadanie.aspx.cs" Inherits="Prowadzacy_DodajZadanie" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<link type="text/css" href="../Scripts/smoothness/jquery-ui-1.8.6.custom.css" rel="stylesheet" />
+	<script type="text/javascript" src="../Scripts/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="../Scripts/jquery.ui.core.js"></script>
+	<script type="text/javascript" src="../Scripts/jquery.ui.datepicker.js"></script>
+	<script type="text/javascript">
+	    $(function () {
+	        $("#datepicker").datepicker();
+	        $('#ctl00_ContentPlaceHolder1_DataOtwarciaTextBox').datepicker({
+	            dateFormat: 'yy-mm-dd',
+	            onSelect: function (inst) {
+	                $('#ctl00_ContentPlaceHolder1_DataZamknieciaTextBox').datepicker('option', 'minDate', this.value);
+	            }
+	        });
+	        $('#ctl00_ContentPlaceHolder1_DataZamknieciaTextBox').datepicker({
+	            dateFormat: 'yy-mm-dd'
+	        });
+	    });
+	</script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <p>

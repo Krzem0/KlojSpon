@@ -6,17 +6,23 @@
 	<script type="text/javascript" src="../Scripts/jquery-1.4.4.min.js"></script>
 	<script type="text/javascript" src="../Scripts/jquery.ui.core.js"></script>
 	<script type="text/javascript" src="../Scripts/jquery.ui.datepicker.js"></script>
+	<script type="text/javascript" src="../Scripts/jquery-ui-timepicker-addon.js"></script>
 	<script type="text/javascript">
 	    $(function () {
-	        $("#datepicker").datepicker();
-	        $('#ctl00_ContentPlaceHolder1_DataOtwarciaTextBox').datepicker({
+	        $('#ctl00_ContentPlaceHolder1_DataOtwarciaTextBox').datetimepicker({
 	            dateFormat: 'yy-mm-dd',
+	            timeFormat: 'hh:mm:ss',
+	            separator: ' @ ',
+	            stepMinute: 5,
 	            onSelect: function (inst) {
-	                $('#ctl00_ContentPlaceHolder1_DataZamknieciaTextBox').datepicker('option', 'minDate', this.value);
+	                $('#ctl00_ContentPlaceHolder1_DataZamknieciaTextBox').datetimepicker('option', 'minDate', this.value);
 	            }
 	        });
-	        $('#ctl00_ContentPlaceHolder1_DataZamknieciaTextBox').datepicker({
-	            dateFormat: 'yy-mm-dd'
+	        $('#ctl00_ContentPlaceHolder1_DataZamknieciaTextBox').datetimepicker({
+	            dateFormat: 'yy-mm-dd',
+	            timeFormat: 'hh:mm:ss',
+	            separator: ' @ ',
+	            stepMinute: 5
 	        });
 	    });
 	</script>

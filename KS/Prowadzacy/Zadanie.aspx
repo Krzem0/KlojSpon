@@ -13,4 +13,40 @@
         <asp:Label ID="StartDateLabel" runat="server" Text=""></asp:Label><br />
         Data zakończenia:
         <asp:Label ID="EndDateLabel" runat="server" Text=""></asp:Label></p>
+    <asp:ListView ID="EnableGroupsListView" runat="server">
+    <LayoutTemplate>
+     <table id="itemPlaceholderContainer" runat="server">
+                <tr id="Tr1" runat="server" style="">
+                    <th id="Th1" runat="server">
+                        Nazwa grupy
+                    </th>
+                    <th id="Th2" runat="server">
+                        DataUtworzenia
+                    </th>
+                </tr>
+                <tr id="itemPlaceholder" runat="server">
+                </tr>
+            </table>
+    </LayoutTemplate>
+    <ItemTemplate>
+     <tr style="">
+                <td>
+                    <asp:CheckBox ID="NazwaCheckBox" runat="server" Text='<%# Eval("Nazwa") %>'/>
+                </td>
+                <td>
+                    <asp:Label ID="DataUtworzeniaLabel" runat="server" Text='<%# Eval("DataUtworzenia") %>' />
+                </td>
+            </tr>
+    </ItemTemplate>
+    <EmptyDataTemplate>
+            <table id="Table1" runat="server">
+                <tr>
+                    <td>
+                        Nie ma grupy, którą możesz dodać.
+                    </td>
+                </tr>
+            </table>
+        </EmptyDataTemplate>
+    </asp:ListView>
+    <asp:Button ID="PrzydzielZadanieButton" runat="server" Text="Przydziel zadanie" />
 </asp:Content>

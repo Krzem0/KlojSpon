@@ -1,0 +1,4 @@
+CREATE TABLE ZadaniawGrupach(
+IdGrupy INT NOT NULL,
+IdZadania INT NOT NULL,
+DataDodania DATETIME NOT NULL)

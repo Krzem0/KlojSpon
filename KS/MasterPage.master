@@ -38,11 +38,13 @@
         <!-- / menu -->
         <div id="content-wrap">
             <div id="sidebar">
+            
                 <asp:Login ID="Login1" runat="server" LoginButtonText="Zaloguj" PasswordLabelText="Hasło:"
                     PasswordRequiredErrorMessage="Hasło jest wymagane." RememberMeText="Zapamiętaj moje dane."
                     TitleText="<h2>Zaloguj się</h2>" UserNameLabelText="Login:" UserNameRequiredErrorMessage="Login jest wymagany."
                     FailureText="Twoja próba logowania nie powiodła się." CssClass="sidebar">
                     <LayoutTemplate>
+                    <asp:Panel ID="LoginPanel" runat="server" DefaultButton="LoginButton">
                         <table cellpadding="1" cellspacing="0" style="border-collapse: collapse;">
                             <tr>
                                 <td>
@@ -97,8 +99,10 @@
                                 </td>
                             </tr>
                         </table>
+                        </asp:Panel>
                     </LayoutTemplate>
                 </asp:Login>
+              
                 <asp:LoginView ID="LoginView1" runat="server">
                 </asp:LoginView>
                 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>

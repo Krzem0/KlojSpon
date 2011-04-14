@@ -56,6 +56,7 @@
       <Column Name="IdWlasciciela" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
       <Column Name="CzyUsuniety" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Grupy_StudenciWGrupach" Member="StudenciWGrupaches" ThisKey="IdGrupy" OtherKey="IdGrupy" Type="StudenciWGrupach" />
+      <Association Name="Grupy_ZadaniawGrupach" Member="ZadaniawGrupaches" ThisKey="IdGrupy" OtherKey="IdGrupy" Type="ZadaniawGrupach" />
     </Type>
   </Table>
   <Table Name="dbo.StudenciWGrupach" Member="StudenciWGrupaches">
@@ -84,6 +85,16 @@
       <Column Name="DataZamkniecia" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="IdWlasciciela" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
       <Association Name="Zadania_DaneWZadaniach" Member="DaneWZadaniaches" ThisKey="IdZadania" OtherKey="IdZadania" Type="DaneWZadaniach" />
+      <Association Name="Zadania_ZadaniawGrupach" Member="ZadaniawGrupaches" ThisKey="IdZadania" OtherKey="IdZadania" Type="ZadaniawGrupach" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ZadaniawGrupach" Member="ZadaniawGrupaches">
+    <Type Name="ZadaniawGrupach">
+      <Column Name="IdGrupy" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdZadania" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DataDodania" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Grupy_ZadaniawGrupach" Member="Grupy" ThisKey="IdGrupy" OtherKey="IdGrupy" Type="Grupy" IsForeignKey="true" />
+      <Association Name="Zadania_ZadaniawGrupach" Member="Zadania" ThisKey="IdZadania" OtherKey="IdZadania" Type="Zadania" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

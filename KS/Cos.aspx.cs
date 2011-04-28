@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -20,7 +21,7 @@ public partial class _Default : System.Web.UI.Page
             // Incidentally, /c tells cmd that we want it to execute the command that follows,
             // and then exit.
             System.Diagnostics.ProcessStartInfo procStartInfo =
-                new System.Diagnostics.ProcessStartInfo("cmd", "/c " + "csc /out:Program.exe Program.cs");
+                new System.Diagnostics.ProcessStartInfo("cmd", "dir");
 
             // The following commands are needed to redirect the standard output.
             // This means that it will be redirected to the Process.StandardOutput StreamReader.
@@ -40,6 +41,27 @@ public partial class _Default : System.Web.UI.Page
         catch (Exception objException)
         {
             ExecuteLabel.Text = "Nastąpił wyjątek: " + objException.Message;
+        }
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Testowa test = new Testowa(){Tekst = TextBox1.Text};
+        DataClassesDataContext db = new DataClassesDataContext();
+        db.Testowas.InsertOnSubmit(test);
+        db.SubmitChanges();
+    }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        DataClassesDataContext db = new DataClassesDataContext();
+        Testowa test = db.Testowas.First();
+        if (test!=null)
+        {
+            TestowyLabel.Text = test.Tekst;
+
+            using (StreamWriter streamWriter = new StreamWriter(Server.MapPath(@"Test.cs")))
+            {
+                streamWriter.Write(test.Tekst);
+            }
         }
     }
 }

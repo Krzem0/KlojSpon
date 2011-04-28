@@ -97,4 +97,21 @@
       <Association Name="Zadania_ZadaniawGrupach" Member="Zadania" ThisKey="IdZadania" OtherKey="IdZadania" Type="Zadania" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Testowa" Member="Testowas">
+    <Type Name="Testowa">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tekst" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NadeslaneZadania" Member="NadeslaneZadanias">
+    <Type Name="NadeslaneZadania">
+      <Column Name="IdZadania" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdStudenta" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KodProgramu" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DataNadeslania" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DataSprawdzenia" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Ocena" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CzyUsuniety" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

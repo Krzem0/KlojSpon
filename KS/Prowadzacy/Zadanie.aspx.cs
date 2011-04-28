@@ -27,20 +27,46 @@ public partial class Prowadzacy_Zadanie : System.Web.UI.Page
     {
         // Napsiać zapytanie które wyciąga zadania
 
-        //ZadaniawGrupach zadaniawGrupach = new ZadaniawGrupach()
-        //                                      {
-                                                  
-        //                                      };
+        // Chyba działa xD
         var querry = from grupy in db.Grupies
-                     join zadaniaWgrupach in db.ZadaniawGrupaches on grupy.IdGrupy equals zadaniaWgrupach.IdGrupy
-                     //where grupy.IdWlasciciela == (Guid)Membership.GetUser().ProviderUserKey
-                     where zadaniaWgrupach.IdZadania != (int)((DataKey)Session["IdZadania"]).Value
-                           &&
-                           zadaniaWgrupach.IdGrupy != grupy.IdGrupy
+                     where !(from zadaniaWgrupach in db.ZadaniawGrupaches
+                             where zadaniaWgrupach.IdZadania == (int)((DataKey)Session["IdZadania"]).Value
+                             select zadaniaWgrupach.IdGrupy).Contains(grupy.IdGrupy)
+                         &&
+                     grupy.IdWlasciciela == (Guid)Membership.GetUser().ProviderUserKey
                      select new { grupy.IdGrupy, grupy.Nazwa, grupy.DataUtworzenia };
-
 
         EnableGroupsListView.DataSource = querry;
         EnableGroupsListView.DataBind();
+    }
+
+    protected void PrzydzielZadanieButton_Click(object sender, EventArgs e)
+    {
+        List<int> idGrupList = new List<int>();
+        for (int i = 0; i < EnableGroupsListView.Items.Count; i++)
+        {
+            CheckBox chk = EnableGroupsListView.Items[i].FindControl("NazwaCheckBox") as CheckBox;
+            if (chk != null && chk.Checked)
+            {
+                idGrupList.Add((int)EnableGroupsListView.DataKeys[i].Value);
+            }
+        }
+
+        DataClassesDataContext db = new DataClassesDataContext();
+        Zadania zadanie = db.Zadanias.FirstOrDefault(g => g.IdZadania == (int)((DataKey)Session["IdZadania"]).Value);
+        foreach (int id in idGrupList)
+        {
+            ZadaniawGrupach zadaniawGrupach = new ZadaniawGrupach
+                                                  {
+                                                      Zadania = zadanie,
+                                                      IdGrupy = id,
+                                                      DataDodania = DateTime.Now
+                                                  };
+            db.ZadaniawGrupaches.InsertOnSubmit(zadaniawGrupach);
+        }
+        db.SubmitChanges();
+        WczytajListeGrup(db);
+        SuccesLabel.Text = "Dodano zadanie do grup/y";
+        SuccesLabel.ForeColor = System.Drawing.Color.Green;
     }
 }

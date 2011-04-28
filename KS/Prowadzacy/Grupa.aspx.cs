@@ -109,9 +109,10 @@ public partial class Prowadzacy_Grupa : System.Web.UI.Page
         }
 
         DataClassesDataContext db = new DataClassesDataContext();
+        //Wcześniej "grupa" była wewnątrz pętli foreach
+        Grupy grupa = db.Grupies.First(g => g.Nazwa == (string)Session["NazwaGrupy"]);
         foreach (var guid in idList)
         {
-            Grupy grupa = db.Grupies.First(g => g.Nazwa == (string)Session["NazwaGrupy"]);
             StudenciWGrupach studenciWGrupach = new StudenciWGrupach
             {
                 IdGrupy = grupa.IdGrupy,

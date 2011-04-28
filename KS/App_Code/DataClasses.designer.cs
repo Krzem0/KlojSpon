@@ -59,6 +59,12 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
   partial void InsertZadaniawGrupach(ZadaniawGrupach instance);
   partial void UpdateZadaniawGrupach(ZadaniawGrupach instance);
   partial void DeleteZadaniawGrupach(ZadaniawGrupach instance);
+  partial void InsertTestowa(Testowa instance);
+  partial void UpdateTestowa(Testowa instance);
+  partial void DeleteTestowa(Testowa instance);
+  partial void InsertNadeslaneZadania(NadeslaneZadania instance);
+  partial void UpdateNadeslaneZadania(NadeslaneZadania instance);
+  partial void DeleteNadeslaneZadania(NadeslaneZadania instance);
   #endregion
 	
 	public DataClassesDataContext() : 
@@ -168,6 +174,22 @@ public partial class DataClassesDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<ZadaniawGrupach>();
+		}
+	}
+	
+	public System.Data.Linq.Table<Testowa> Testowas
+	{
+		get
+		{
+			return this.GetTable<Testowa>();
+		}
+	}
+	
+	public System.Data.Linq.Table<NadeslaneZadania> NadeslaneZadanias
+	{
+		get
+		{
+			return this.GetTable<NadeslaneZadania>();
 		}
 	}
 }
@@ -2088,6 +2110,298 @@ public partial class ZadaniawGrupach : INotifyPropertyChanging, INotifyPropertyC
 					this._IdZadania = default(int);
 				}
 				this.SendPropertyChanged("Zadania");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Testowa")]
+public partial class Testowa : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _Id;
+	
+	private string _Tekst;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTekstChanging(string value);
+    partial void OnTekstChanged();
+    #endregion
+	
+	public Testowa()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int Id
+	{
+		get
+		{
+			return this._Id;
+		}
+		set
+		{
+			if ((this._Id != value))
+			{
+				this.OnIdChanging(value);
+				this.SendPropertyChanging();
+				this._Id = value;
+				this.SendPropertyChanged("Id");
+				this.OnIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tekst", DbType="NText NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+	public string Tekst
+	{
+		get
+		{
+			return this._Tekst;
+		}
+		set
+		{
+			if ((this._Tekst != value))
+			{
+				this.OnTekstChanging(value);
+				this.SendPropertyChanging();
+				this._Tekst = value;
+				this.SendPropertyChanged("Tekst");
+				this.OnTekstChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NadeslaneZadania")]
+public partial class NadeslaneZadania : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _IdZadania;
+	
+	private System.Guid _IdStudenta;
+	
+	private string _KodProgramu;
+	
+	private System.DateTime _DataNadeslania;
+	
+	private System.Nullable<System.DateTime> _DataSprawdzenia;
+	
+	private System.Nullable<double> _Ocena;
+	
+	private bool _CzyUsuniety;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdZadaniaChanging(int value);
+    partial void OnIdZadaniaChanged();
+    partial void OnIdStudentaChanging(System.Guid value);
+    partial void OnIdStudentaChanged();
+    partial void OnKodProgramuChanging(string value);
+    partial void OnKodProgramuChanged();
+    partial void OnDataNadeslaniaChanging(System.DateTime value);
+    partial void OnDataNadeslaniaChanged();
+    partial void OnDataSprawdzeniaChanging(System.Nullable<System.DateTime> value);
+    partial void OnDataSprawdzeniaChanged();
+    partial void OnOcenaChanging(System.Nullable<double> value);
+    partial void OnOcenaChanged();
+    partial void OnCzyUsunietyChanging(bool value);
+    partial void OnCzyUsunietyChanged();
+    #endregion
+	
+	public NadeslaneZadania()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdZadania", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	public int IdZadania
+	{
+		get
+		{
+			return this._IdZadania;
+		}
+		set
+		{
+			if ((this._IdZadania != value))
+			{
+				this.OnIdZadaniaChanging(value);
+				this.SendPropertyChanging();
+				this._IdZadania = value;
+				this.SendPropertyChanged("IdZadania");
+				this.OnIdZadaniaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdStudenta", DbType="UniqueIdentifier NOT NULL", IsPrimaryKey=true)]
+	public System.Guid IdStudenta
+	{
+		get
+		{
+			return this._IdStudenta;
+		}
+		set
+		{
+			if ((this._IdStudenta != value))
+			{
+				this.OnIdStudentaChanging(value);
+				this.SendPropertyChanging();
+				this._IdStudenta = value;
+				this.SendPropertyChanged("IdStudenta");
+				this.OnIdStudentaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KodProgramu", DbType="NText NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+	public string KodProgramu
+	{
+		get
+		{
+			return this._KodProgramu;
+		}
+		set
+		{
+			if ((this._KodProgramu != value))
+			{
+				this.OnKodProgramuChanging(value);
+				this.SendPropertyChanging();
+				this._KodProgramu = value;
+				this.SendPropertyChanged("KodProgramu");
+				this.OnKodProgramuChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataNadeslania", DbType="DateTime NOT NULL")]
+	public System.DateTime DataNadeslania
+	{
+		get
+		{
+			return this._DataNadeslania;
+		}
+		set
+		{
+			if ((this._DataNadeslania != value))
+			{
+				this.OnDataNadeslaniaChanging(value);
+				this.SendPropertyChanging();
+				this._DataNadeslania = value;
+				this.SendPropertyChanged("DataNadeslania");
+				this.OnDataNadeslaniaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataSprawdzenia", DbType="DateTime")]
+	public System.Nullable<System.DateTime> DataSprawdzenia
+	{
+		get
+		{
+			return this._DataSprawdzenia;
+		}
+		set
+		{
+			if ((this._DataSprawdzenia != value))
+			{
+				this.OnDataSprawdzeniaChanging(value);
+				this.SendPropertyChanging();
+				this._DataSprawdzenia = value;
+				this.SendPropertyChanged("DataSprawdzenia");
+				this.OnDataSprawdzeniaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ocena", DbType="Float")]
+	public System.Nullable<double> Ocena
+	{
+		get
+		{
+			return this._Ocena;
+		}
+		set
+		{
+			if ((this._Ocena != value))
+			{
+				this.OnOcenaChanging(value);
+				this.SendPropertyChanging();
+				this._Ocena = value;
+				this.SendPropertyChanged("Ocena");
+				this.OnOcenaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CzyUsuniety", DbType="Bit NOT NULL")]
+	public bool CzyUsuniety
+	{
+		get
+		{
+			return this._CzyUsuniety;
+		}
+		set
+		{
+			if ((this._CzyUsuniety != value))
+			{
+				this.OnCzyUsunietyChanging(value);
+				this.SendPropertyChanging();
+				this._CzyUsuniety = value;
+				this.SendPropertyChanged("CzyUsuniety");
+				this.OnCzyUsunietyChanged();
 			}
 		}
 	}

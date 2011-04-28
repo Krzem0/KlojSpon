@@ -1,0 +1,8 @@
+CREATE TABLE NadeslaneZadania(
+IdZadania INT NOT NULL,
+IdStudenta UNIQUEIDENTIFIER NOT NULL,
+KodProgramu NTEXT NOT NULL,
+DataNadeslania DATETIME NOT NULL,
+DataSprawdzenia DATETIME,
+Ocena FLOAT,
+CzyUsuniety BIT)

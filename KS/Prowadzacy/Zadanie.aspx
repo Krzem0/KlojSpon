@@ -13,7 +13,8 @@
         <asp:Label ID="StartDateLabel" runat="server" Text=""></asp:Label><br />
         Data zakończenia:
         <asp:Label ID="EndDateLabel" runat="server" Text=""></asp:Label></p>
-    <asp:ListView ID="EnableGroupsListView" runat="server">
+        <asp:Label ID="SuccesLabel" runat="server" Text=""></asp:Label>
+    <asp:ListView ID="EnableGroupsListView" runat="server" DataKeyNames="IdGrupy">
     <LayoutTemplate>
      <table id="itemPlaceholderContainer" runat="server">
                 <tr id="Tr1" runat="server" style="">
@@ -48,5 +49,6 @@
             </table>
         </EmptyDataTemplate>
     </asp:ListView>
-    <asp:Button ID="PrzydzielZadanieButton" runat="server" Text="Przydziel zadanie" />
+    <asp:Button ID="PrzydzielZadanieButton" runat="server" Text="Przydziel zadanie" 
+        onclick="PrzydzielZadanieButton_Click" />
 </asp:Content>

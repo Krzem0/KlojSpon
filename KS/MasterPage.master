@@ -112,9 +112,9 @@
                 <asp:Menu ID="MenuStudent" runat="server" Visible="False">
                     <Items>
                         <asp:MenuItem Text="Profil" Value="Profil"></asp:MenuItem>
-                        <asp:MenuItem Text="Moje zadania" Value="Moje zadania"></asp:MenuItem>
+                        <asp:MenuItem Text="Moje zadania" Value="Moje zadania" NavigateUrl="~/Student/MojeZadania.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Moje grupy" Value="Moje grupy"></asp:MenuItem>
-                        <asp:MenuItem Text="Zgłoś zadanie" Value="Zgłoś zadanie"></asp:MenuItem>
+                        <asp:MenuItem Text="Zgłoś zadanie" Value="Zgłoś zadanie" NavigateUrl="~/Student/ZglosZadanie.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx"></asp:MenuItem>
                     </Items>
                 </asp:Menu>

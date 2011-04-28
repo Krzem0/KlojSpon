@@ -67,12 +67,16 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Podaj dane wejściowe"
             Text="*" ControlToValidate="DaneWeTextBox">
         </asp:RequiredFieldValidator>
+        <br />
+        <span class="opis">Każda wartość w kolejnym wierszu, odpowiadającym wartości wyjściowej.</span>
         <asp:TextBox ID="DaneWeTextBox" runat="server" Height="113px" TextMode="MultiLine"
             Width="205px"></asp:TextBox>
         Dane wyjściowe:
         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Podaj dane wyjściowe"
             Text="*" ControlToValidate="DaneWyTextBox">
         </asp:RequiredFieldValidator>
+        <br />
+        <span class="opis">Każda wartość w kolejnym wierszu, odpowiadającym wartości wejściowej.</span>
         <asp:TextBox ID="DaneWyTextBox" runat="server" Height="106px" TextMode="MultiLine"
             Width="204px"></asp:TextBox></p>
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" />

@@ -15,14 +15,8 @@ h1 { font-size: 120%; }
 h2 { font-size: 110%; text-transform: uppercase; }
 h3 { font-size: 110%; color: #007E80; }
 
-h1, h2, h3, p {
-	margin: 0;
-	padding: 10px;		
-}
-ul, ol {
-	margin: 10px 20px;
-	padding: 0 20px;
-}
+h1, h2, h3, p {margin: 0; padding: 10px;}
+ul, ol {margin: 10px 20px; padding: 0 20px;}
 
 img {border: 2px solid #CCC;}
 img.fr {margin: 5px 0px 5px 10px;}
@@ -39,10 +33,7 @@ code {
   background: #FAFAFA;
   border: 1px solid #f2f2f2;  
 }
-acronym {
-  cursor: help;
-  border-bottom: 1px solid #777;
-}
+acronym {cursor: help; border-bottom: 1px solid #777;}
 
 blockquote {
 	margin: 10px;
@@ -90,6 +81,8 @@ input.button, .button input, input[type="submit"], #ctl00_LoginStatus1 {
 }
 input.button:hover, .button input:hover, input[type="submit"]:hover, #ctl00_LoginStatus1:hover {background-color: #EFEFEF;}
 
+.opis {color: #8F8F8F; font-size: 0.9em;}
+
 form.search {
 	padding: 0; margin: 0; 
 	vertical-align: bottom;
@@ -108,18 +101,9 @@ form.search input.button {
 	padding: 1px 3px;
 	width: 60px;
 }
-table.lista {
-	width: 100%;
-	border: 1px solid #EFEFEF;
-}
-table.lista th {
-	background-color: #EDEDED;
-	text-align: center;
-}
-table.lista td {
-	border: 1px solid #E5E5E5;
-	padding: 3px;
-}
+table.lista {width: 100%; border: 1px solid #EFEFEF;}
+table.lista th {background-color: #EDEDED; text-align: center;}
+table.lista td {border: 1px solid #E5E5E5; padding: 3px;}
 
 #main > table { width: 100%;}
 #main > table > tr > th, #main > table > tr > td {padding: 3px 5px;}
@@ -258,7 +242,7 @@ table#ctl00_ContentPlaceHolder1_EnableStudentsList_itemPlaceholderContainer labe
 	margin: 3px 0px 8px 0; padding: 0;
 	text-decoration: none;	
 }
-#sidebar ul.sidemenu li, #sidebar #ctl00_MenuProwadzacy span, #ctl00_MenuProwadzacy table td{
+#sidebar ul.sidemenu li, #sidebar #ctl00_MenuProwadzacy span, #ctl00_MenuProwadzacy table td, #sidebar #ctl00_MenuStudent span, #ctl00_MenuStudent table td {
 	border-bottom: 1px solid #EFF0F1;
 	background: url('images/bullet.gif') no-repeat 2px 3px ;
 	padding: 2px 0 2px 25px;

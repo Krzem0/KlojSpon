@@ -9,18 +9,14 @@
     <form id="form1" runat="server">
     <div>
         <asp:Label ID="ExecuteLabel" runat="server" Text="Label" />
-        <p><asp:Button ID="ExecuteButton" runat="server" Text="Execute" 
-                onclick="ExecuteButton_Click" /></p>
-
-                <p>
-                    <asp:TextBox ID="TextBox1" runat="server" Height="177px" TextMode="MultiLine" 
-                        Width="304px"></asp:TextBox>
-                    <asp:Button ID="Button1"
-                        runat="server" Text="Zapisz" onclick="Button1_Click" /></p>
-                        <p>
-                            <asp:Button ID="Button2" runat="server" Text="Button" onclick="Button2_Click" /><asp:Label ID="TestowyLabel" runat="server"
-                                Text=""></asp:Label></p>
-        
+        <p>
+            <asp:Button ID="ExecuteButton" runat="server" Text="Execute" OnClick="ExecuteButton_Click" /></p>
+        <p>
+            <asp:TextBox ID="TextBox1" runat="server" Height="177px" TextMode="MultiLine" Width="304px"></asp:TextBox>
+            <asp:Button ID="Button1" runat="server" Text="Zapisz" OnClick="Button1_Click" /></p>
+        <p>
+            <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" /><asp:Label
+                ID="TestowyLabel" runat="server" Text=""></asp:Label></p>
     </div>
     </form>
 </body>

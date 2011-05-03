@@ -38,100 +38,107 @@
         <!-- / menu -->
         <div id="content-wrap">
             <div id="sidebar">
-            
                 <asp:Login ID="Login1" runat="server" LoginButtonText="Zaloguj" PasswordLabelText="Hasło:"
                     PasswordRequiredErrorMessage="Hasło jest wymagane." RememberMeText="Zapamiętaj moje dane."
                     TitleText="<h2>Zaloguj się</h2>" UserNameLabelText="Login:" UserNameRequiredErrorMessage="Login jest wymagany."
                     FailureText="Twoja próba logowania nie powiodła się." CssClass="sidebar">
                     <LayoutTemplate>
-                    <asp:Panel ID="LoginPanel" runat="server" DefaultButton="LoginButton">
-                        <table cellpadding="1" cellspacing="0" style="border-collapse: collapse;">
-                            <tr>
-                                <td>
-                                    <table cellpadding="0">
-                                        <tr>
-                                            <td align="center" colspan="2">
-                                                <h2>
-                                                    Zaloguj się</h2>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td align="right" valign="top" style="margin-top: 10px;">
-                                                <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Login:</asp:Label>
-                                            </td>
-                                            <td>
-                                                <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
-                                                    ErrorMessage="Login jest wymagany." ToolTip="Login jest wymagany." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td align="right" valign="top">
-                                                <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Hasło:</asp:Label>
-                                            </td>
-                                            <td>
-                                                <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
-                                                    ErrorMessage="Hasło jest wymagane." ToolTip="Hasło jest wymagane." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <asp:CheckBox ID="RememberMe" runat="server" Text="Zapamiętaj moje dane." />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                Nie masz konta? <a href="Register.aspx">Zarejestruj się</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td align="center" colspan="2" style="color: Red;">
-                                                <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td align="center" colspan="2" class="button">
-                                                <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Zaloguj" ValidationGroup="ctl00$Login1" />
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
+                        <asp:Panel ID="LoginPanel" runat="server" DefaultButton="LoginButton">
+                            <table cellpadding="1" cellspacing="0" style="border-collapse: collapse;">
+                                <tr>
+                                    <td>
+                                        <table cellpadding="0">
+                                            <tr>
+                                                <td align="center" colspan="2">
+                                                    <h2>
+                                                        Zaloguj się</h2>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right" valign="top" style="margin-top: 10px;">
+                                                    <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Login:</asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
+                                                        ErrorMessage="Login jest wymagany." ToolTip="Login jest wymagany." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right" valign="top">
+                                                    <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Hasło:</asp:Label>
+                                                </td>
+                                                <td>
+                                                    <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
+                                                        ErrorMessage="Hasło jest wymagane." ToolTip="Hasło jest wymagane." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <asp:CheckBox ID="RememberMe" runat="server" Text="Zapamiętaj moje dane." />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    Nie masz konta? <a href="Register.aspx">Zarejestruj się</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" colspan="2" style="color: Red;">
+                                                    <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" colspan="2" class="button">
+                                                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Zaloguj" ValidationGroup="ctl00$Login1" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
                         </asp:Panel>
                     </LayoutTemplate>
                 </asp:Login>
-              
                 <asp:LoginView ID="LoginView1" runat="server">
                 </asp:LoginView>
                 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-                <p class="ac"><asp:LoginName ID="LoginName1" runat="server" /></p>
+                <p class="ac">
+                    <asp:LoginName ID="LoginName1" runat="server" />
+                </p>
                 <asp:Label ID="TwojeKontoLabel" runat="server" Text="<h2>Twoje konto</h2>" Visible="false"></asp:Label>
                 <!-- Menu dla studenta -->
                 <asp:Menu ID="MenuStudent" runat="server" Visible="False">
                     <Items>
                         <asp:MenuItem Text="Profil" Value="Profil"></asp:MenuItem>
-                        <asp:MenuItem Text="Moje zadania" Value="Moje zadania" NavigateUrl="~/Student/MojeZadania.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Moje zadania" Value="Moje zadania" NavigateUrl="~/Student/MojeZadania.aspx">
+                        </asp:MenuItem>
                         <asp:MenuItem Text="Moje grupy" Value="Moje grupy"></asp:MenuItem>
-                        <asp:MenuItem Text="Zgłoś zadanie" Value="Zgłoś zadanie" NavigateUrl="~/Student/ZglosZadanie.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Wyslij rozwiazanie" Value="Wyslij rozwiazanie" NavigateUrl="~/Student/WyslijRozwiazanie.aspx">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx">
+                        </asp:MenuItem>
                     </Items>
                 </asp:Menu>
                 <!-- Menu dla prowadzacego -->
                 <asp:Menu ID="MenuProwadzacy" runat="server" Visible="false">
                     <Items>
                         <asp:MenuItem Text="Profil" Value="Profil"></asp:MenuItem>
-                        <asp:MenuItem Text="Zarządzanie zadaniami" Value="Zarządzanie zadaniami" NavigateUrl="~/Prowadzacy/ZarzadzanieZadaniami.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Zarządzanie grupami" Value="Zarządzanie grupami" NavigateUrl="~/Prowadzacy/ZarzadzanieGrupami.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Zarządzanie zadaniami" Value="Zarządzanie zadaniami" NavigateUrl="~/Prowadzacy/ZarzadzanieZadaniami.aspx">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Zarządzanie grupami" Value="Zarządzanie grupami" NavigateUrl="~/Prowadzacy/ZarzadzanieGrupami.aspx">
+                        </asp:MenuItem>
                         <asp:MenuItem Text="Zarządzanie użykownikami" Value="Zarządzanie użykownikami"></asp:MenuItem>
-                        <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx">
+                        </asp:MenuItem>
                     </Items>
                 </asp:Menu>
                 <!-- Menu ogólne -->
                 <asp:Menu ID="MenuOgolne" runat="server" Visible="false">
                     <Items>
-                        <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx">
+                        </asp:MenuItem>
                     </Items>
                 </asp:Menu>
                 <asp:LoginStatus ID="LoginStatus1" runat="server" Visible="False" LogoutText="Wyloguj" />
@@ -161,13 +168,12 @@
                 <p>
                     Skuteczność: 74%</p>
             </div>
-        <!-- / sidebar -->
-        <div id="main">
-            
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-        <!-- / main -->
+            <!-- / sidebar -->
+            <div id="main">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- / main -->
         </div>
         <!-- / content-wrap -->
         <div id="footer">

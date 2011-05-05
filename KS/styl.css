@@ -295,5 +295,6 @@ input#ctl00_Login1_RememberMe {vertical-align: middle;}
 .ar { text-align: right; }
 
 /* additional classes */
-.clear { clear: both; }
+.clear, .clr { clear: both; }
 .gray { color: #CCC; }
+div.blok1-2 {width: 265px; float: left;}

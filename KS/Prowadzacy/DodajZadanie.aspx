@@ -30,6 +30,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <h1>Dodawanie zadania</h1>
     <p>
         <asp:Label ID="SuccesLabel" runat="server" ForeColor="#00CC00"></asp:Label></p>
     <p>

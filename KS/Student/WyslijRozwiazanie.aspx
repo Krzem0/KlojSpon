@@ -5,6 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <h1>Wyślij rozwiązanie zadania</h1>
     <p>
         <asp:Label ID="DoneLabel" runat="server" Text="Rozwiązanie przesłane<br />" ForeColor="#009933"
             Visible="False"></asp:Label>

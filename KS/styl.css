@@ -6,6 +6,7 @@ body {
 }
 a {text-decoration: none; color: #667F99;}
 a:hover {text-decoration: underline; color: #996800;}
+p {margin: 12px 0;}
 
 h1, h2, h3 {
 	font-family: Verdana, Tahoma, 'Trebuchet MS', Sans-serif;
@@ -15,7 +16,7 @@ h1 { font-size: 120%; }
 h2 { font-size: 110%; text-transform: uppercase; }
 h3 { font-size: 110%; color: #007E80; }
 
-h1, h2, h3, p {margin: 0; padding: 10px;}
+h1, h2, h3 {margin: 0; padding: 10px;}
 ul, ol {margin: 10px 20px; padding: 0 20px;}
 
 img {border: 2px solid #CCC;}
@@ -69,7 +70,17 @@ input.button, .button input, input[type="submit"], #ctl00_LoginStatus1 {
 	margin: 0; 
 	font: bolder 12px Arial, Sans-serif; 
 	border: 1px solid #CCC; 
-	padding: 2px 3px; 
+	padding: 3px 5px; 
+	background: #FFF;
+	color: #275F6C;
+}
+.button  
+{
+	padding: 
+	margin: 0; 
+	font: bolder 12px Arial, Sans-serif; 
+	border: 1px solid #CCC; 
+	padding: 3px 5px; 
 	background: #FFF;
 	color: #275F6C;
 }
@@ -98,14 +109,14 @@ form.search input.textbox {
 }
 form.search input.button {
 	height: 20px;
-	padding: 1px 3px;
+	padding: 3px 4px;
 	width: 60px;
 }
 table.lista {width: 100%; border: 1px solid #EFEFEF;}
 table.lista th {background-color: #EDEDED; text-align: center;}
 table.lista td {border: 1px solid #E5E5E5; padding: 3px;}
 
-#main > table { width: 100%;}
+#main > table { width: 100%; margin: 10px 0 15px 0;}
 #main > table > tr > th, #main > table > tr > td {padding: 3px 5px;}
 table#ctl00_ContentPlaceHolder1_EnableStudentsList_itemPlaceholderContainer label {display: inline;}
 
@@ -257,9 +268,9 @@ table#ctl00_ContentPlaceHolder1_EnableStudentsList_itemPlaceholderContainer labe
 	background: none;
 }
 
+table td label {display: inline; vertical-align: top; padding-left: 5px;}
 label#ctl00_Login1_UserNameLabel, label#ctl00_Login1_PasswordLabel {margin: 0;}
 input#ctl00_Login1_RememberMe {vertical-align: middle;}
-label[for="ctl00_Login1_RememberMe"] {display: inline; padding-left: 5px;}
 #ctl00_ContentPlaceHolder1_CreateUserWizard1 {width: 100%;}
 
 /* footer */

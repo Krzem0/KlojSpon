@@ -38,11 +38,11 @@
             Text="*" ControlToValidate="TytulTextBox"></asp:RequiredFieldValidator>
         <asp:TextBox ID="TytulTextBox" runat="server"></asp:TextBox></p>
     <p>
-        Opis:
+        Opis (treść) zadania:
         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Podaj opis"
-            Text="*" ControlToValidate="OpisTextBox"></asp:RequiredFieldValidator>
+            Text="*" ControlToValidate="OpisTextBox"></asp:RequiredFieldValidator></p>
         <asp:TextBox ID="OpisTextBox" runat="server" Height="183px" TextMode="MultiLine"
-            Width="432px"></asp:TextBox></p>
+            Width="432px"></asp:TextBox>
     <p>
         Data otwarcia:
         <asp:TextBox ID="DataOtwarciaTextBox" runat="server" Height="19px" Width="130px"
@@ -61,24 +61,25 @@
         </asp:RegularExpressionValidator>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Wprowadź datę zamknięcia"
             Text="*" ControlToValidate="DataZamknieciaTextBox">
-        </asp:RequiredFieldValidator></p>
-    <p>
+        </asp:RequiredFieldValidator>
+    <div class="blok1-2"><p>
         Dane wejściowe:
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Podaj dane wejściowe"
             Text="*" ControlToValidate="DaneWeTextBox">
-        </asp:RequiredFieldValidator>
-        <br />
-        <span class="opis">Każda wartość w kolejnym wierszu, odpowiadającym wartości wyjściowej.</span>
+        </asp:RequiredFieldValidator></p>
+        
+       <p> <span class="opis">Po jednym zestawie danych wejściowych w jednym wierszu. Wartości oddzielone pojedynczym białym znakiem.</span></p>
         <asp:TextBox ID="DaneWeTextBox" runat="server" Height="113px" TextMode="MultiLine"
-            Width="205px"></asp:TextBox>
+            Width="205px"></asp:TextBox></div>
+       <div class="blok1-2"><p>
         Dane wyjściowe:
         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Podaj dane wyjściowe"
             Text="*" ControlToValidate="DaneWyTextBox">
         </asp:RequiredFieldValidator>
-        <br />
-        <span class="opis">Każda wartość w kolejnym wierszu, odpowiadającym wartości wejściowej.</span>
+        </p><p>
+        <span class="opis">Każdy zestaw wartości w kolejnym wierszu, odpowiadającym zestawowi wejściowemu.</span></p>
         <asp:TextBox ID="DaneWyTextBox" runat="server" Height="106px" TextMode="MultiLine"
-            Width="204px"></asp:TextBox></p>
+            Width="204px"></asp:TextBox></div>
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
     <asp:Button ID="WyslijButton" runat="server" Text="Dodaj zadanie" OnClick="WyslijButton_Click" />
 </asp:Content>

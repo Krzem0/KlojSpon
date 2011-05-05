@@ -50,5 +50,5 @@
             </table>
         </EmptyDataTemplate>
     </asp:ListView>
-    <a href="DodajZadanie.aspx"><span>Dodaj zadanie</span></a>
+    <a href="DodajZadanie.aspx" class="button"><span>Dodaj zadanie</span></a>
 </asp:Content>

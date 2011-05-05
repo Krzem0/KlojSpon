@@ -17,9 +17,9 @@
     <p>
         <asp:Label ID="DatyLabel" runat="server" Text=""></asp:Label></p>
     <p>
-        Tu wklej kod swojego programu:<br />
+        Tu wklej kod swojego programu:</p>
         <asp:TextBox ID="KodTextBox" runat="server" TextMode="MultiLine" Height="350px" Width="500px"></asp:TextBox>
         <asp:Button ID="SendButton" runat="server" Text="Wyślij" 
             onclick="SendButton_Click" />
-    </p>
+    
 </asp:Content>

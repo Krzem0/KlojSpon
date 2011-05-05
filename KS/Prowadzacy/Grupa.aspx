@@ -52,12 +52,14 @@
         </LayoutTemplate>
     </asp:ListView>
     <br />
+    <h3>
+        Dodawanie osób do grupy</h3>
     <%--<a href="">Dodaj użytkownika/ów do grupy</a><br />--%>
-    Podaj nazwę użytkownika, którego chcesz dodać:
+    <p>Podaj nazwę użytkownika, którego chcesz dodać:
     <asp:TextBox ID="AddTextBox" runat="server"></asp:TextBox>
-    <asp:Button ID="AddButton" runat="server" Text="Dodaj do grupy" OnClick="AddButton_Click" /><br />
+    <asp:Button ID="AddButton" runat="server" Text="Dodaj do grupy" OnClick="AddButton_Click" /></p>
     <asp:Label ID="GroupNameExistLabel" runat="server" Visible="False"></asp:Label>
-    <br />
+    
     <asp:ListView ID="EnableStudentsList" runat="server" DataKeyNames="UserId">
         <ItemTemplate>
             <tr style="">

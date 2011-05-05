@@ -14,6 +14,9 @@
         Data zakończenia:
         <asp:Label ID="EndDateLabel" runat="server" Text=""></asp:Label></p>
         <asp:Label ID="SuccesLabel" runat="server" Text=""></asp:Label>
+    <h3>
+        Dodawanie zadania do grup</h3>
+        <p>Zaznacz grupy, do których chcesz przydzielić wybrane zadanie.</p>
     <asp:ListView ID="EnableGroupsListView" runat="server" DataKeyNames="IdGrupy">
     <LayoutTemplate>
      <table id="itemPlaceholderContainer" runat="server">

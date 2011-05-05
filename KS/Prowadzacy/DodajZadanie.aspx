@@ -70,16 +70,16 @@
         
        <p> <span class="opis">Po jednym zestawie danych wejściowych w jednym wierszu. Wartości oddzielone pojedynczym białym znakiem.</span></p>
         <asp:TextBox ID="DaneWeTextBox" runat="server" Height="200px" TextMode="MultiLine"
-            Width="265px"></asp:TextBox></div>
+            Width="255px"></asp:TextBox></div>
        <div class="blok1-2"><p>
         Dane wyjściowe:
         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Podaj dane wyjściowe"
             Text="*" ControlToValidate="DaneWyTextBox">
         </asp:RequiredFieldValidator>
         </p><p>
-        <span class="opis">Każdy zestaw wartości w kolejnym wierszu, odpowiadającym zestawowi wejściowemu.</span></p>
+        <span class="opis">Każdy zestaw wartości w kolejnym wierszu, odpowiadającym zestawowi wejściowemu.<br /></span></p>
         <asp:TextBox ID="DaneWyTextBox" runat="server" Height="200px" TextMode="MultiLine"
-            Width="265px"></asp:TextBox></div>
+            Width="255px"></asp:TextBox></div>
             <div class="clr"></div>
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
     <asp:Button ID="WyslijButton" runat="server" Text="Dodaj zadanie" OnClick="WyslijButton_Click" />

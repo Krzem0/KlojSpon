@@ -62,7 +62,7 @@ input {
 textarea {
 	padding:2px;
 	font: normal 1em Verdana, sans-serif;
-	border:1px solid #eee;
+	border:1px solid #DDD;
 	display:block;
 	color:#777;
 }
@@ -74,7 +74,7 @@ input.button, .button input, input[type="submit"], #ctl00_LoginStatus1 {
 	background: #FFF;
 	color: #275F6C;
 }
-.button  
+a.button  
 {
 	padding: 
 	margin: 0; 

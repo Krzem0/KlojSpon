@@ -1,12 +1,14 @@
-﻿<%@ Page Title="Moje zadania" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="MojeZadania.aspx.cs" Inherits="Student_MojeZadania" %>
+﻿<%@ Page Title="Moje zadania" Language="C#" MasterPageFile="~/MasterPage.master"
+    AutoEventWireup="true" CodeFile="MojeZadania.aspx.cs" Inherits="Student_MojeZadania" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <h1>Moje zadania</h1>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <h1>
+        Moje zadania</h1>
     <asp:ListView ID="MojeZadaniaListView" runat="server" DataKeyNames="IdZadania" OnSelectedIndexChanging="MojeZadaniaListView_SelectedIndexChanging">
-    <LayoutTemplate>
-     <table id="itemPlaceholderContainer" runat="server">
+        <LayoutTemplate>
+            <table id="itemPlaceholderContainer" runat="server">
                 <tr id="Tr1" runat="server" style="">
                     <th id="Th1" runat="server">
                         Tytuł zadania
@@ -17,15 +19,18 @@
                     <th id="Th3" runat="server">
                         Data zamknięcia
                     </th>
+                    <th id="Th4" runat="server">
+                        Status
+                    </th>
                 </tr>
                 <tr id="itemPlaceholder" runat="server">
                 </tr>
             </table>
-    </LayoutTemplate>
-    <ItemTemplate>
-     <tr style="">
+        </LayoutTemplate>
+        <ItemTemplate>
+            <tr style="">
                 <td>
-                    <asp:LinkButton ID="NazwaLinkButton" runat="server" Text='<%# Eval("Tytul") %>' CommandName="select"/>
+                    <asp:LinkButton ID="NazwaLinkButton" runat="server" Text='<%# Eval("Tytul") %>' CommandName="select" />
                 </td>
                 <td>
                     <asp:Label ID="DataUtworzeniaLabel" runat="server" Text='<%# Eval("DataOtwarcia") %>' />
@@ -33,9 +38,12 @@
                 <td>
                     <asp:Label ID="DataZamknieciaLabel" runat="server" Text='<%# Eval("DataZamkniecia") %>' />
                 </td>
+                <td>
+                    <asp:Label ID="OcenaLabel" runat="server" Text="" />
+                </td>
             </tr>
-    </ItemTemplate>
-    <EmptyDataTemplate>
+        </ItemTemplate>
+        <EmptyDataTemplate>
             <table id="Table1" runat="server">
                 <tr>
                     <td>
@@ -46,4 +54,3 @@
         </EmptyDataTemplate>
     </asp:ListView>
 </asp:Content>
-

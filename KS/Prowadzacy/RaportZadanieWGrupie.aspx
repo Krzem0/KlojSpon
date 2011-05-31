@@ -2,6 +2,13 @@
     AutoEventWireup="true" CodeFile="RaportZadanieWGrupie.aspx.cs" Inherits="Prowadzacy_RaportZadanieWGrupie" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <script type="text/javascript" src="../Scripts/jquery-1.5.1.min.js"></script>
+    <script type="text/javaScript" src="../Scripts/chili/jquery.chili-2.2.js"></script>
+    <script type="text/javascript">
+	    ChiliBook.recipeFolder = "../Scripts/chili/"; 
+	    ChiliBook.automatic = true; 
+        ChiliBook.lineNumbers = true;
+    </script> 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1>
@@ -92,7 +99,9 @@
         </SelectedItemTemplate>
     </asp:ListView>
     <pre>
-    <asp:Label ID="KodProgramuLabel" runat="server" Text="" />    
+        <code class="csharp">
+            <asp:Label ID="KodProgramuLabel" runat="server" Text="" />  
+        </code>  
     </pre>
     <asp:Table ID="DaneWYTable" runat="server" Visible="false">
         <asp:TableHeaderRow>

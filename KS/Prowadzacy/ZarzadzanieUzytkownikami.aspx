@@ -6,7 +6,7 @@
 <H1>Zarządzanie Użytkownikami</H1>
 <ul>
 <li>
-    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Prowadzacy/TwozenieKont.aspx">Twożenie kont użytkowników</asp:HyperLink></li>
+    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Prowadzacy/TworzenieKont.aspx">Tworzenie kont użytkowników</asp:HyperLink></li>
 </ul>
 </asp:Content>
 

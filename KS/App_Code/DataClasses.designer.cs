@@ -2241,6 +2241,8 @@ public partial class NadeslaneZadania : INotifyPropertyChanging, INotifyProperty
 	
 	private bool _CzyUsuniety;
 	
+	private string _WynikiZadania;
+	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2259,6 +2261,8 @@ public partial class NadeslaneZadania : INotifyPropertyChanging, INotifyProperty
     partial void OnOcenaChanged();
     partial void OnCzyUsunietyChanging(bool value);
     partial void OnCzyUsunietyChanged();
+    partial void OnWynikiZadaniaChanging(string value);
+    partial void OnWynikiZadaniaChanged();
     #endregion
 	
 	public NadeslaneZadania()
@@ -2402,6 +2406,26 @@ public partial class NadeslaneZadania : INotifyPropertyChanging, INotifyProperty
 				this._CzyUsuniety = value;
 				this.SendPropertyChanged("CzyUsuniety");
 				this.OnCzyUsunietyChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WynikiZadania", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+	public string WynikiZadania
+	{
+		get
+		{
+			return this._WynikiZadania;
+		}
+		set
+		{
+			if ((this._WynikiZadania != value))
+			{
+				this.OnWynikiZadaniaChanging(value);
+				this.SendPropertyChanging();
+				this._WynikiZadania = value;
+				this.SendPropertyChanged("WynikiZadania");
+				this.OnWynikiZadaniaChanged();
 			}
 		}
 	}

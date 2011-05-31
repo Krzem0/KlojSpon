@@ -25,7 +25,8 @@
     </table>
     <h3>
         Nadesłane rozwiązania:</h3>
-    <asp:ListView ID="NadeslaneRozwiazaniaListView" runat="server" DataKeyNames="UserId">
+    <asp:ListView ID="NadeslaneRozwiazaniaListView" runat="server" DataKeyNames="UserId"
+        OnSelectedIndexChanging="WyborNadeslanegoZadania">
         <LayoutTemplate>
             <table id="itemPlaceholderContainer" runat="server" border="0" style="">
                 <tr id="Tr1" runat="server" style="">
@@ -33,6 +34,12 @@
                         Student
                     </th>
                     <th id="Th2" runat="server">
+                        Data nadesłania
+                    </th>
+                    <th id="Th3" runat="server">
+                        Data sprawdzenia
+                    </th>
+                    <th id="Th4" runat="server">
                         Ocena
                     </th>
                 </tr>
@@ -41,12 +48,19 @@
             </table>
         </LayoutTemplate>
         <ItemTemplate>
-            <tr>
+            <tr runat="server">
                 <td>
-                    <asp:Label ID="NazwaUrzytkownikaLabel" runat="server" Text='<%# Eval("UserName") %>'></asp:Label>
+                    <asp:LinkButton ID="NazwaUrzytkownikaLabel" runat="server" Text='<%# Eval("UserName") %>'
+                        CommandName="Select"></asp:LinkButton>
                 </td>
                 <td>
-                    <asp:Label ID="DataDodaniaLabel" runat="server" Text='<%# Eval("Ocena") %>'></asp:Label>
+                    <asp:Label ID="DataNadeslaniaLabel" runat="server" Text='<%# Eval("DataNadeslania") %>'></asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="DataSprawdzeniaLabel" runat="server" Text='<%# Eval("DataSprawdzenia") %>' />
+                </td>
+                <td>
+                    <asp:Label ID="OcenaLabel" runat="server" Text='<%# Eval("Ocena") %>'></asp:Label>
                 </td>
             </tr>
         </ItemTemplate>
@@ -59,5 +73,35 @@
                 </tr>
             </table>
         </EmptyDataTemplate>
+        <SelectedItemTemplate>
+            <tr runat="server" style="background-color: #B1E93F">
+                <td>
+                    <asp:LinkButton ID="NazwaUrzytkownikaLabel" runat="server" Text='<%# Eval("UserName") %>'
+                        CommandName="Select"></asp:LinkButton>
+                </td>
+                <td>
+                    <asp:Label ID="DataNadeslaniaLabel" runat="server" Text='<%# Eval("DataNadeslania") %>'></asp:Label>
+                </td>
+                <td>
+                    <asp:Label ID="DataSprawdzeniaLabel" runat="server" Text='<%# Eval("DataSprawdzenia") %>' />
+                </td>
+                <td>
+                    <asp:Label ID="OcenaLabel" runat="server" Text='<%# Eval("Ocena") %>'></asp:Label>
+                </td>
+            </tr>
+        </SelectedItemTemplate>
     </asp:ListView>
+    <pre>
+    <asp:Label ID="KodProgramuLabel" runat="server" Text="" />    
+    </pre>
+    <asp:Table ID="DaneWYTable" runat="server" Visible="false">
+        <asp:TableHeaderRow>
+            <asp:TableHeaderCell>
+                Zestaw wyjściowy zadania
+            </asp:TableHeaderCell>
+            <asp:TableHeaderCell>
+                Zestaw wyjściowy wygenerowany
+            </asp:TableHeaderCell>
+        </asp:TableHeaderRow>
+    </asp:Table>
 </asp:Content>

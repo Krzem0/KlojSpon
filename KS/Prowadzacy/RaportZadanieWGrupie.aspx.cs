@@ -68,7 +68,9 @@ public partial class Prowadzacy_RaportZadanieWGrupie : System.Web.UI.Page
         Guid userId = (Guid)NadeslaneRozwiazaniaListView.DataKeys[e.NewSelectedIndex].Value;
         NadeslaneZadania nadeslaneZadanie =
             db.NadeslaneZadanias.FirstOrDefault(z => z.IdStudenta == userId && z.IdZadania == (int)Session["IdZadania"]);
-        KodProgramuLabel.Text = nadeslaneZadanie.KodProgramu;
+        KodProgramuLabel.Text = "<pre><code id=\"jq\" class=\"csharp\">" +
+                                nadeslaneZadanie.KodProgramu +
+                                "</code></pre>";
 
         var querry = from dWz in db.DaneWZadaniaches
                      join dWeWy in db.DaneWeWies on dWz.IdDanych equals dWeWy.IdDanych

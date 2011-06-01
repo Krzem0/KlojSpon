@@ -5,10 +5,10 @@
     <script type="text/javascript" src="../Scripts/jquery-1.5.1.min.js"></script>
     <script type="text/javaScript" src="../Scripts/chili/jquery.chili-2.2.js"></script>
     <script type="text/javascript">
-	    ChiliBook.recipeFolder = "../Scripts/chili/"; 
-	    ChiliBook.automatic = true; 
+        ChiliBook.recipeFolder = "../Scripts/chili/";
+        ChiliBook.automatic = true;
         ChiliBook.lineNumbers = true;
-    </script> 
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1>
@@ -98,11 +98,10 @@
             </tr>
         </SelectedItemTemplate>
     </asp:ListView>
-    <pre>
-        <code class="csharp">
-            <asp:Label ID="KodProgramuLabel" runat="server" Text="" />  
-        </code>  
-    </pre>
+    <asp:Label ID="KodProgramuLabel" runat="server" Text="" />
+    <script type="text/javascript">
+        $('#jq').chili(); 
+    </script>
     <asp:Table ID="DaneWYTable" runat="server" Visible="false">
         <asp:TableHeaderRow>
             <asp:TableHeaderCell>

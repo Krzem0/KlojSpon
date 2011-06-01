@@ -30,5 +30,30 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 MenuOgolne.Visible = true;
             }
         }
+        WczytajStatystyki();
+    }
+
+    protected void WczytajStatystyki()
+    {
+        DataClassesDataContext db = new DataClassesDataContext();
+
+        int liczbaWszystkichZadan = db.Zadanias.Count();
+        LiczbaWszystkichZadanLabel.Text = liczbaWszystkichZadan.ToString();
+
+        var querry = from n in db.NadeslaneZadanias
+                     where n.Ocena != null
+                     select n;
+        LiczbaNadeslanychZadanLabel.Text = querry.Count().ToString();
+
+        float skutecznosc = 0;
+        foreach (var nadeslaneZadania in querry)
+        {
+            skutecznosc += (float)nadeslaneZadania.Ocena;
+        }
+        if (querry.Count() != 0)
+        {
+            skutecznosc /= querry.Count();
+        }
+        SkutecznoscLabel.Text = string.Format("{0:0}%", skutecznosc*100);
     }
 }

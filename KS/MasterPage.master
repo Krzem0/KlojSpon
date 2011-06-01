@@ -164,11 +164,14 @@
                 <h2>
                     Statystyki</h2>
                 <p>
-                    Ilość wszystkich zadań: 254</p>
+                    Ilość wszystkich zadań: 
+                    <asp:Label ID="LiczbaWszystkichZadanLabel" runat="server" Text=""></asp:Label></p>
                 <p>
-                    Rozwiązane zadania: 24</p>
+                    Sprawdzone rozwiązania: 
+                    <asp:Label ID="LiczbaNadeslanychZadanLabel" runat="server" Text=""></asp:Label></p>
                 <p>
-                    Skuteczność: 74%</p>
+                    Skuteczność: 
+                    <asp:Label ID="SkutecznoscLabel" runat="server" Text=""></asp:Label></p>
             </div>
             <!-- / sidebar -->
             <div id="main">

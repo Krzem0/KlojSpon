@@ -2,16 +2,10 @@
     AutoEventWireup="true" CodeFile="RaportZadanieWGrupie.aspx.cs" Inherits="Prowadzacy_RaportZadanieWGrupie" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script type="text/javascript" src="../Scripts/jquery-1.5.1.min.js"></script>
-    <script type="text/javaScript" src="../Scripts/chili/jquery.chili-2.2.js"></script>
-    <script type="text/javascript">
-    <![CDATA[
-        ChiliBook.recipeFolder = "../Scripts/chili/";
-        //ChiliBook.automatic = true;
-        //ChiliBook.lineNumbers = true;
-        $('#jq').chili();
-    ]]>
-    </script>
+    <script type="text/javascript" src="../Scripts/sh/shCore.js"></script>
+    <script type="text/javascript" src="../Scripts/sh/shBrushCSharp.js"></script>
+    <link href="../Scripts/sh/css/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="../Scripts/sh/css/shThemeDefault.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <h1>
@@ -112,4 +106,7 @@
             </asp:TableHeaderCell>
         </asp:TableHeaderRow>
     </asp:Table>
+    <script type="text/javascript">
+         SyntaxHighlighter.all()
+    </script>
 </asp:Content>

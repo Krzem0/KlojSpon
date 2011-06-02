@@ -172,7 +172,7 @@ table#ctl00_ContentPlaceHolder1_EnableStudentsList_itemPlaceholderContainer labe
 #menu {
 	clear: both;
 	width: 833px;
-	height: 26px;
+	height: 18px;
 	background: #FFF url('images/menubg.jpg') repeat-y;
 	margin: 0;
 	font: bolder 12px/26px Tahoma, Verdana, Arial, Sans-Serif;			
@@ -244,7 +244,7 @@ table#ctl00_ContentPlaceHolder1_EnableStudentsList_itemPlaceholderContainer labe
 	padding: 3px 10px; 
 	font: bold 120% Tahoma, Verdana, Sans-Serif;	
 	color: #FFF;	
-	background: #B6B8BB;
+	background-color: #268CA0;
 	text-align: left;	
 }
 #sidebar ul.sidemenu {

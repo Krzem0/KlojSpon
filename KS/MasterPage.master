@@ -14,26 +14,13 @@
     <div id="wrapper">
         <div id="header">
             <h1 id="logo">
-                Kloj<span class="gray">Spon</span></h1>
+                <a href="/">Kloj<span class="gray">Spon</span></a></h1>
             <h2 id="slogan">
                 Zadania programistyczne</h2>
-            <div id="searchform">
-                <form method="post" class="search" action="#">
-                <p>
-                    <input name="search_query" class="textbox" type="text" />
-                    <input name="search" class="button" type="submit" value="Szukaj" /></p>
-                </form>
-            </div>
         </div>
         <!-- / header -->
         <div id="menu">
-            <ul>
-                <li class="active"><a href="/Default.aspx"><span>Strona główna</span></a></li>
-                <li><a href="/Default.aspx"><span>Zadania</span></a></li>
-                <li><a href="/Default.aspx"><span>Materiały</span></a></li>
-                <li><a href="/Default.aspx"><span>Zasady</span></a></li>
-                <li><a href="/Default.aspx"><span>Ranking</span></a></li>
-            </ul>
+            &nbsp;
         </div>
         <!-- / menu -->
         <div id="content-wrap">
@@ -183,7 +170,7 @@
         <!-- / content-wrap -->
         <div id="footer">
             <p class="ac">
-                &copy; 2011 <strong>KlojSpon</strong></p>
+                &copy; 2011 <strong>Marcin Krzemiński, Tomasz Kilijański, Kamil Ged, Mariusz Bodzioch</strong></p>
         </div>
         <!-- / footer -->
     </div>

@@ -98,7 +98,6 @@
                 <!-- Menu dla studenta -->
                 <asp:Menu ID="MenuStudent" runat="server" Visible="False">
                     <Items>
-                        <asp:MenuItem Text="Profil" Value="Profil"></asp:MenuItem>
                         <asp:MenuItem Text="Moje zadania" Value="Moje zadania" NavigateUrl="~/Student/MojeZadania.aspx">
                         </asp:MenuItem>
                         <asp:MenuItem Text="Moje grupy" Value="Moje grupy"></asp:MenuItem>
@@ -111,7 +110,6 @@
                 <!-- Menu dla prowadzacego -->
                 <asp:Menu ID="MenuProwadzacy" runat="server" Visible="false">
                     <Items>
-                        <asp:MenuItem Text="Profil" Value="Profil"></asp:MenuItem>
                         <asp:MenuItem Text="Zarządzanie zadaniami" Value="Zarządzanie zadaniami" NavigateUrl="~/Prowadzacy/ZarzadzanieZadaniami.aspx">
                         </asp:MenuItem>
                         <asp:MenuItem Text="Zarządzanie grupami" Value="Zarządzanie grupami" NavigateUrl="~/Prowadzacy/ZarzadzanieGrupami.aspx">

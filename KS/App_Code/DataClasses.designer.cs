@@ -2243,6 +2243,8 @@ public partial class NadeslaneZadania : INotifyPropertyChanging, INotifyProperty
 	
 	private string _WynikiZadania;
 	
+	private string _CzasWykonania;
+	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2263,6 +2265,8 @@ public partial class NadeslaneZadania : INotifyPropertyChanging, INotifyProperty
     partial void OnCzyUsunietyChanged();
     partial void OnWynikiZadaniaChanging(string value);
     partial void OnWynikiZadaniaChanged();
+    partial void OnCzasWykonaniaChanging(string value);
+    partial void OnCzasWykonaniaChanged();
     #endregion
 	
 	public NadeslaneZadania()
@@ -2426,6 +2430,26 @@ public partial class NadeslaneZadania : INotifyPropertyChanging, INotifyProperty
 				this._WynikiZadania = value;
 				this.SendPropertyChanged("WynikiZadania");
 				this.OnWynikiZadaniaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CzasWykonania", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+	public string CzasWykonania
+	{
+		get
+		{
+			return this._CzasWykonania;
+		}
+		set
+		{
+			if ((this._CzasWykonania != value))
+			{
+				this.OnCzasWykonaniaChanging(value);
+				this.SendPropertyChanging();
+				this._CzasWykonania = value;
+				this.SendPropertyChanged("CzasWykonania");
+				this.OnCzasWykonaniaChanged();
 			}
 		}
 	}

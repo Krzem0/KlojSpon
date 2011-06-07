@@ -80,6 +80,7 @@ public partial class Prowadzacy_RaportZadanieWGrupie : System.Web.UI.Page
         if (nadeslaneZadanie.WynikiZadania != null)
         {
             string[] wygenerowaneOdp = Regex.Split(nadeslaneZadanie.WynikiZadania, @"\r\n\r\n");
+            string[] czasyWykonania = Regex.Split(nadeslaneZadanie.CzasWykonania, @"\r\n");
 
             List<TableCell> tableCellsList1 = new List<TableCell>();
             foreach (var s in wygenerowaneOdp)
@@ -97,6 +98,14 @@ public partial class Prowadzacy_RaportZadanieWGrupie : System.Web.UI.Page
                 tableCellsList2.Add(tableCell);
             }
 
+            List<TableCell> tableCellsList3 = new List<TableCell>();
+            foreach (var s in czasyWykonania)
+            {
+                TableCell tableCell = new TableCell();
+                tableCell.Text = s;
+                tableCellsList3.Add(tableCell);
+            }
+
             for (int i = 0; i < tableCellsList2.Count; i++)
             {
                 TableRow tableRow =  new TableRow();
@@ -111,6 +120,15 @@ public partial class Prowadzacy_RaportZadanieWGrupie : System.Web.UI.Page
                     tableRow.Cells.Add(new TableCell() { Text = "" });
                 }
 
+                try
+                {
+                    tableRow.Cells.Add(tableCellsList3[i]);
+                }
+                catch (Exception)
+                {
+                    tableRow.Cells.Add(new TableCell() { Text = "" });
+                }
+                
                 DaneWYTable.Rows.Add(tableRow);
             }
 

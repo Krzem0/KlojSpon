@@ -27,7 +27,7 @@
         <classShapeMoniker Id="fc6ecfb1-4aa2-4b27-8b5a-eec678feb1d0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.32774983723958); (5.75 : 4.32774983723958); (5.75 : 3.375); (5.79166666666667 : 3.375 : JumpStart); (5.95833333333333 : 3.375 : JumpEnd); (6.718748 : 3.375); (6.718748 : 1.94399251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.28125 : 3.25); (5.28125 : 1.03125); (6.25 : 1.03125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataClassesDataContext/aspnet_User/aspnet_User_aspnet_UsersInRole" />
       <nodes>
         <classShapeMoniker Id="bf7561be-8b89-4f03-9024-e0dc4d671bb6" />
@@ -131,10 +131,10 @@
         <elementListCompartment Id="8659ec09-e003-4ed0-b1a9-ac60dbd92019" absoluteBounds="3.015, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e1627dd6-fb31-4212-a737-13ccbdb902b6" absoluteBounds="0.75, 0.5, 2, 2.3478011067708335">
+    <classShape Id="e9d44be2-7f35-4b4d-b077-939941a97cdc" absoluteBounds="0.75, 0.5, 2, 2.5401025390625">
       <DataClassMoniker Name="/DataClassesDataContext/NadeslaneZadania" />
       <nestedChildShapes>
-        <elementListCompartment Id="3978c0e7-36ed-4965-a883-4132a25a6999" absoluteBounds="0.76500000000000012, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b3542591-47aa-4460-b368-43f16c43eb19" absoluteBounds="0.76500000000000012, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

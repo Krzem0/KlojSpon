@@ -104,6 +104,9 @@
             <asp:TableHeaderCell>
                 Zestaw wyjściowy wygenerowany
             </asp:TableHeaderCell>
+            <asp:TableHeaderCell>
+                Czas wykonania w sek.
+            </asp:TableHeaderCell>
         </asp:TableHeaderRow>
     </asp:Table>
     <script type="text/javascript">

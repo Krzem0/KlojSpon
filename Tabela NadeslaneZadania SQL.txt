@@ -5,4 +5,7 @@ KodProgramu NTEXT NOT NULL,
 DataNadeslania DATETIME NOT NULL,
 DataSprawdzenia DATETIME,
 Ocena FLOAT,
+CzyUsuniety BIT NOT NULL,
+WynikiZadania NTEXT,
+CzasWykonania NTEXT,
 CzyUsuniety BIT)

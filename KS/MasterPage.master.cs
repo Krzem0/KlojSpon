@@ -16,7 +16,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
             Login1.Visible = false;
             LoginStatus1.Visible = true;
             Label1.Text = "<h2>Twoje konto</h2><p>Jesteś zalogowany jako: </p>";
-            TwojeKontoLabel.Visible = true;
+            //TwojeKontoLabel.Visible = true;
             if (Roles.IsUserInRole("Prowadzacy"))
             {
                 MenuProwadzacy.Visible = true;

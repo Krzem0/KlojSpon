@@ -113,6 +113,7 @@
       <Column Name="Ocena" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="CzyUsuniety" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="WynikiZadania" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CzasWykonania" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
 </Database>

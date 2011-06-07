@@ -41,7 +41,7 @@ public partial class Student_ZadanieStudent : System.Web.UI.Page
         if (nadeslaneZadania != null)
         {
             if (nadeslaneZadania.Ocena != null)
-                OcenaLabel.Text = "Twoja ocena za to zadanie to: " + nadeslaneZadania.Ocena;
+                OcenaLabel.Text = string.Format("Twoja ocena za to zadanie to: {0:0}%",nadeslaneZadania.Ocena*100);
             else OcenaLabel.Text = "To zadanie nie zostało jeszcze ocenione";
         }
         else

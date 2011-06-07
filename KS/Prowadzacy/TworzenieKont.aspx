@@ -7,7 +7,7 @@
     <h1>
         Utwórz konta użytkownikom</h1>
      
-     <p>Każde konto w kolejnej linii, w formacie "login hasło". Separatorem loginu i hasła może być tylko i wyłącznie jeden biały znak (spacja).</p>
+     <p class="info">Każde konto w kolejnej linii, w formacie "login hasło". Separatorem loginu i hasła może być tylko i wyłącznie jeden biały znak (spacja).</p>
      <p><asp:Label ID="ResoultsLabel" runat="server" Text="" Visible="false"></asp:Label></p>
         <asp:TextBox ID="LoginsTextBox" runat="server" Height="220px" TextMode="MultiLine"
             Width="310px"></asp:TextBox>

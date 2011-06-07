@@ -53,8 +53,8 @@ public partial class Student_ZglosZadanie : System.Web.UI.Page
             int.TryParse(ZadaniaDropDownList.SelectedItem.Value, out id);
             Zadania zadanie = db.Zadanias.FirstOrDefault(z => z.IdZadania == id);
             Session["Zadanie"] = zadanie;
-            OpisZadaniaLabel.Text = "Opis:\n" + zadanie.Opis;
-            DatyLabel.Text = "Data otwarcia: " + zadanie.DataOtwarcia.ToLocalTime() + " Data zamknięcia: " +
+            OpisZadaniaLabel.Text = "<h3>Opis:</h3>" + zadanie.Opis;
+            DatyLabel.Text = "<b>Data otwarcia:</b> " + zadanie.DataOtwarcia.ToLocalTime() + " <br/><b>Data zamknięcia:</b> " +
                              zadanie.DataZamkniecia.ToLocalTime();
         }
         else OpisZadaniaLabel.Text = "Nie ma żadnych zadań do których można nadesłać rozwiązanie.";

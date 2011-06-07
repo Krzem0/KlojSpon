@@ -92,7 +92,9 @@
                 </asp:LoginView>
                 <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                 <p class="ac">
-                    <asp:LoginName ID="LoginName1" runat="server" />
+                    <b>
+                        <asp:LoginName ID="LoginName1" runat="server" />
+                    </b>
                 </p>
                 <asp:Label ID="TwojeKontoLabel" runat="server" Text="<h2>Twoje konto</h2>" Visible="false"></asp:Label>
                 <!-- Menu dla studenta -->
@@ -100,10 +102,11 @@
                     <Items>
                         <asp:MenuItem Text="Moje zadania" Value="Moje zadania" NavigateUrl="~/Student/MojeZadania.aspx">
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Moje grupy" Value="Moje grupy"></asp:MenuItem>
                         <asp:MenuItem Text="Wyslij rozwiazanie" Value="Wyslij rozwiazanie" NavigateUrl="~/Student/WyslijRozwiazanie.aspx">
                         </asp:MenuItem>
                         <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Ranking" Value="Ranking" NavigateUrl="~/Ranking.aspx">
                         </asp:MenuItem>
                     </Items>
                 </asp:Menu>
@@ -114,10 +117,12 @@
                         </asp:MenuItem>
                         <asp:MenuItem Text="Zarządzanie grupami" Value="Zarządzanie grupami" NavigateUrl="~/Prowadzacy/ZarzadzanieGrupami.aspx">
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Zarządzanie użykownikami" Value="Zarządzanie użykownikami" NavigateUrl="~/Prowadzacy/ZarzadzanieUzytkownikami.aspx">
+                        <asp:MenuItem Text="Tworzenie kont użytkowników" Value="Tworzenie kont użytkowników" NavigateUrl="~/Prowadzacy/TworzenieKont.aspx">
                         </asp:MenuItem>
                         <asp:MenuItem Text="Raporty" Value="Raporty" NavigateUrl="~/Prowadzacy/Raporty.aspx" />
                         <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Ranking" Value="Ranking" NavigateUrl="~/Ranking.aspx">
                         </asp:MenuItem>
                     </Items>
                 </asp:Menu>
@@ -126,36 +131,21 @@
                     <Items>
                         <asp:MenuItem Text="Zmień hasło" Value="Zmień hasło" NavigateUrl="~/ChangePassword.aspx">
                         </asp:MenuItem>
+                        <asp:MenuItem Text="Ranking" Value="Ranking" NavigateUrl="~/Ranking.aspx">
+                        </asp:MenuItem>
                     </Items>
                 </asp:Menu>
                 <asp:LoginStatus ID="LoginStatus1" runat="server" Visible="False" LogoutText="Wyloguj" />
-                <%--<ul class="sidemenu">
-                    <li><a href="">Profil</a></li>
-                    <li><a href="">Moje zadania</a></li>
-                    <li><a href="">Moje grupy</a></li>
-                    <li><a href="">Zgłoś zadanie</a></li>
-                    
-                    <asp:LoginStatus ID="LoginStatus1" runat="server" Visible="False" LogoutText="<li>Wyloguj</li>" />
-                    
-                </ul>--%>
-                <%--<h2>
-                    Twoje konto</h2>
-                <ul class="sidemenu">
-                    <li><a href="">Profil</a></li>
-                    <li><a href="">Zarządzanie zadaniami</a></li>
-                    <li><a href="">Zarządzanie grupami</a></li>
-                    <li><a href="">Zarządzanie użykownikami</a></li>
-                </ul>--%>
                 <h2>
                     Statystyki</h2>
                 <p>
-                    Ilość wszystkich zadań: 
+                    Ilość wszystkich zadań:
                     <asp:Label ID="LiczbaWszystkichZadanLabel" runat="server" Text=""></asp:Label></p>
                 <p>
-                    Sprawdzone rozwiązania: 
+                    Sprawdzone rozwiązania:
                     <asp:Label ID="LiczbaNadeslanychZadanLabel" runat="server" Text=""></asp:Label></p>
                 <p>
-                    Skuteczność: 
+                    Skuteczność:
                     <asp:Label ID="SkutecznoscLabel" runat="server" Text=""></asp:Label></p>
             </div>
             <!-- / sidebar -->

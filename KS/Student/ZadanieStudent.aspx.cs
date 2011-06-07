@@ -23,7 +23,7 @@ public partial class Student_ZadanieStudent : System.Web.UI.Page
         Zadania zadanie = db.Zadanias.FirstOrDefault(z => z.IdZadania == (int)Session["IdZadania"]);
         TytulLabel.Text = zadanie.Tytul;
         OpisLabel.Text = zadanie.Opis;
-        DataLabel.Text = "Data otwarcia: " + zadanie.DataOtwarcia.ToLocalTime() + " Data zamkniecia: " +
+        DataLabel.Text = "<b>Data otwarcia:</b> " + zadanie.DataOtwarcia.ToLocalTime() + "<br/><b>Data zamkniecia:</b> " +
                          zadanie.DataZamkniecia.ToLocalTime();
     }
 

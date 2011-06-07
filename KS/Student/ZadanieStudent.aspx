@@ -13,6 +13,7 @@
     <p>
         <asp:Label ID="DataLabel" runat="server" Text="Brak daty"></asp:Label></p>
     <p>
-        <asp:Label ID="OcenaLabel" runat="server" Text="Brak oceny"></asp:Label><asp:HyperLink
-            ID="WyslijZadanieHyperLink" runat="server" Visible="False" NavigateUrl="~/Student/WyslijRozwiazanie.aspx">wyślij</asp:HyperLink></p>
+        <asp:Label ID="OcenaLabel" runat="server" Text="Brak oceny"></asp:Label></p>
+    <p>
+        <asp:HyperLink ID="WyslijZadanieHyperLink" runat="server" Visible="False" NavigateUrl="~/Student/WyslijRozwiazanie.aspx">wyślij</asp:HyperLink></p>
 </asp:Content>

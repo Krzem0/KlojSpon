@@ -15,6 +15,7 @@ public partial class Prowadzacy_TwożenieKont : System.Web.UI.Page
     }
     protected void CreateAccountButton_Click(object sender, EventArgs e)
     {
+        DataClassesDataContext db = new DataClassesDataContext();
         string exceptions = "";
         string[] loginyIhasla = Regex.Split(LoginsTextBox.Text, @"\r\n");
         foreach (var s in loginyIhasla)
@@ -24,8 +25,14 @@ public partial class Prowadzacy_TwożenieKont : System.Web.UI.Page
             {
                 try
                 {
-                    Membership.CreateUser(daneKonta[0], daneKonta[1]);
                     Roles.AddUserToRole(daneKonta[0],"Student");
+                    DaneUsera daneUsera = new DaneUsera()
+                    {
+                        Name = "",
+                        Surname = "",
+                        UserId = (Guid)Membership.CreateUser(daneKonta[0], daneKonta[1]).ProviderUserKey,
+                    };
+                    db.DaneUseras.InsertOnSubmit(daneUsera);
                 }
                 catch (Exception exception)
                 {
@@ -41,6 +48,8 @@ public partial class Prowadzacy_TwożenieKont : System.Web.UI.Page
                 exceptions += "</br>";
             }
         }
+        db.SubmitChanges();
+
         ResoultsLabel.ForeColor = System.Drawing.Color.Red;
         if (exceptions != "")
             ResoultsLabel.Text += "Nie udało sie utworzyć następujących kont:</br>" + exceptions;

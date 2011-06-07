@@ -114,7 +114,7 @@ textarea
     display: block;
     color: #777;
 }
-input.button, .button input, input[type="submit"], #ctl00_LoginStatus1
+input.button, .button input, input[type="submit"], #ctl00_LoginStatus1, #ctl00_ContentPlaceHolder1_WyslijZadanieHyperLink
 {
     margin: 0;
     font: bolder 12px Arial, Sans-serif;
@@ -135,11 +135,11 @@ a.button
 #ctl00_LoginStatus1
 {
     display: block;
-    margin: 4px auto;
+    margin: 10px auto;
     text-align: center;
     width: 70px;
 }
-input.button:hover, .button input:hover, input[type="submit"]:hover, #ctl00_LoginStatus1:hover
+input.button:hover, .button input:hover, input[type="submit"]:hover, #ctl00_LoginStatus1:hover, #ctl00_ContentPlaceHolder1_WyslijZadanieHyperLink:hover
 {
     background-color: #EFEFEF;
 }
@@ -354,6 +354,14 @@ table#ctl00_ContentPlaceHolder1_EnableStudentsList_itemPlaceholderContainer labe
     margin: 0 10px 0 5px;
 }
 
+.info
+{
+    padding: 5px;
+    background-color: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    color: #996666;
+}
+
 /* sidebar */
 #sidebar
 {
@@ -383,7 +391,7 @@ table#ctl00_ContentPlaceHolder1_EnableStudentsList_itemPlaceholderContainer labe
 {
     border-bottom: 1px solid #EFF0F1;
     background: url('images/bullet.gif') no-repeat 2px 3px;
-    padding: 2px 0 2px 25px;
+    padding: 4px 0 4px 25px;
     margin: 0 2px;
 }
 

@@ -26,8 +26,8 @@ public partial class Prowadzacy_Grupa : System.Web.UI.Page
         if (GroupNameLabel.Text != "")
         {
             DataClassesDataContext db = new DataClassesDataContext();
-            
-            bool exist = db.aspnet_Users.Any(u => u.UserName == AddTextBox.Text);   
+
+            bool exist = db.aspnet_Users.Any(u => u.UserName == AddTextBox.Text);
             if (exist)
             {
                 aspnet_User user = db.aspnet_Users.First(u => u.UserName == AddTextBox.Text);
@@ -81,6 +81,13 @@ public partial class Prowadzacy_Grupa : System.Web.UI.Page
                       where !(from uINg in db.StudenciWGrupaches
                               select uINg.IdStudenta).Contains(users.UserId) && role.RoleName == "Student"
                       select new { users.UserId, users.UserName, daneUsera.Name, daneUsera.Surname };
+
+        if (querry2.Count() == 0)
+        {
+            AddLabel.Visible = false;
+            AddTextBox.Visible = false;
+            AddButton.Visible = false;
+        }
         EnableStudentsList.DataSource = querry2;
         EnableStudentsList.DataBind();
     }
@@ -92,8 +99,8 @@ public partial class Prowadzacy_Grupa : System.Web.UI.Page
     }
     private void DescriptionLabelText(DataClassesDataContext db)
     {
-        Grupy grupa = db.Grupies.First(g => g.Nazwa == (string) Session["NazwaGrupy"]);
-        DescriptionLabel.Text = "utworzona: "+ grupa.DataUtworzenia.Date.ToShortDateString();
+        Grupy grupa = db.Grupies.First(g => g.Nazwa == (string)Session["NazwaGrupy"]);
+        DescriptionLabel.Text = "<b>utworzona:</b> " + grupa.DataUtworzenia.Date.ToShortDateString();
     }
 
     protected void AddCheckedButton_Click(object sender, EventArgs e)

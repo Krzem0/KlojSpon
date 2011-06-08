@@ -154,6 +154,8 @@ table.tabela {border: 1px solid #E6E6E6;}
 table.tabela th {background-color: #DDD; padding: 3px 5px;}
 table.tabela td {background-color: #FAFAFA; padding: 2px 4px; border: 1px solid #EFEFEF;}
 
+#main tr.aktywne td {background-color: #B1E93F;}
+
 form.search
 {
     padding: 0;

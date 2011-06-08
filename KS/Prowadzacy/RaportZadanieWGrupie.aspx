@@ -78,7 +78,7 @@
             </table>
         </EmptyDataTemplate>
         <SelectedItemTemplate>
-            <tr runat="server" style="background-color: #B1E93F">
+            <tr runat="server" class="aktywne">
                 <td>
                     <asp:LinkButton ID="NazwaUrzytkownikaLabel" runat="server" Text='<%# Eval("UserName") %>'
                         CommandName="Select"></asp:LinkButton>

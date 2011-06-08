@@ -30,7 +30,7 @@
             </tr>
         </ItemTemplate>
         <LayoutTemplate>
-            <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+            <table id="itemPlaceholderContainer" runat="server" border="0" class="tabela">
                 <tr runat="server" style="">
                     <th runat="server">
                         Nazwa

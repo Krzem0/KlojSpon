@@ -18,13 +18,13 @@
         <asp:Label ID="OpisZadaniaLabel" runat="server" Text=""></asp:Label></p>
     <p>
         <asp:Label ID="DatyLabel" runat="server" Text=""></asp:Label></p>
-    <p class="info">
+    <p class="komunikat info">
         Przed wysłaniem kodu upewnij się, że kompiluje się on poprawnie, gdyż nie ma możliwości
         nadesłania zadania ponownie.<br />
         Dane wejściowe należy pobierać ze standardowego wejścia i wysyłać na standardowe wyjście.
     </p>
     <p>
         Tu wklej kod swojego programu:</p>
-    <asp:TextBox ID="KodTextBox" runat="server" TextMode="MultiLine" Height="350px" Width="500px"></asp:TextBox>
+    <asp:TextBox ID="KodTextBox" runat="server" TextMode="MultiLine" Height="350px" Width="542px"></asp:TextBox>
     <asp:Button ID="SendButton" runat="server" Text="Wyślij" OnClick="SendButton_Click" />
 </asp:Content>

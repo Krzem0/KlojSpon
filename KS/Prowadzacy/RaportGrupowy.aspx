@@ -14,7 +14,7 @@
     </h3>
     <asp:ListView ID="StudenciWGrupieListView" runat="server" DataKeyNames="UserId">
         <LayoutTemplate>
-            <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+            <table id="itemPlaceholderContainer" class="tabela" runat="server" border="0" style="">
                 <tr id="Tr1" runat="server" style="">
                     <th id="Th1" runat="server">
                         Studenci
@@ -40,8 +40,8 @@
         <EmptyDataTemplate>
             <table id="Table1" runat="server">
                 <tr>
-                    <td>
-                        Nie ma studentów w tej grupie.
+                    <td><p class="komunikat info">
+                        Nie ma studentów w tej grupie.</p>
                     </td>
                 </tr>
             </table>
@@ -53,7 +53,7 @@
     <asp:ListView ID="ZadaniaWGrupieListView" runat="server" DataKeyNames="IdZadania"
         OnSelectedIndexChanging="ZadanieIndexChanging">
         <LayoutTemplate>
-            <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+            <table id="itemPlaceholderContainer" class="tabela" runat="server" border="0" style="">
                 <tr id="Tr1" runat="server" style="">
                     <th id="Th1" runat="server">
                         Tytuł
@@ -85,8 +85,8 @@
         <EmptyDataTemplate>
             <table id="Table1" runat="server">
                 <tr>
-                    <td>
-                        Nie ma zadań przydzielonych do tej grupy.
+                    <td><p class="komunikat info">
+                        Nie ma zadań przydzielonych do tej grupy.</p>
                     </td>
                 </tr>
             </table>

@@ -1,17 +1,14 @@
-body
-{
+body {
     background: #FFF;
     font: normal 70%/1.5em Verdana, Tahoma, Verdana, sans-serif;
     color: #333;
     text-align: center;
 }
-a
-{
+a {
     text-decoration: none;
     color: #667F99;
 }
-a:hover
-{
+a:hover {
     text-decoration: underline;
     color: #996800;
 }
@@ -149,6 +146,13 @@ input.button:hover, .button input:hover, input[type="submit"]:hover, #ctl00_Logi
     color: #8F8F8F;
     font-size: 0.9em;
 }
+.komunikat {background-color: #F9F9F9; border-top: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; color: #885555; padding: 5px 20px 5px 5px;}
+.info {background: url('images/information.png') no-repeat right 5px;}
+.ok {background: url('images/accept.png') no-repeat right center;}
+.error {background: url('images/exclamation.png') no-repeat right center;}
+table.tabela {border: 1px solid #E6E6E6;}
+table.tabela th {background-color: #DDD; padding: 3px 5px;}
+table.tabela td {background-color: #FAFAFA; padding: 2px 4px; border: 1px solid #EFEFEF;}
 
 form.search
 {
@@ -354,13 +358,7 @@ table#ctl00_ContentPlaceHolder1_EnableStudentsList_itemPlaceholderContainer labe
     margin: 0 10px 0 5px;
 }
 
-.info
-{
-    padding: 5px;
-    background-color: #FAFAFA;
-    border: 1px solid #DDDDDD;
-    color: #996666;
-}
+
 
 /* sidebar */
 #sidebar

@@ -27,14 +27,14 @@
         <EmptyDataTemplate>
             <table id="Table1" runat="server">
                 <tr>
-                    <td>
-                        Brak członków grupy.
+                    <td><p class="komunikat info">
+                        Brak członków grupy.</p>
                     </td>
                 </tr>
             </table>
         </EmptyDataTemplate>
         <LayoutTemplate>
-            <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+            <table id="itemPlaceholderContainer" runat="server" class="tabela" border="0" style="">
                 <tr id="Tr2" runat="server" style="">
                     <th id="Th1" runat="server">
                         Nazwa Użytkownika
@@ -77,14 +77,14 @@
         <EmptyDataTemplate>
             <table id="Table1" runat="server">
                 <tr>
-                    <td>
-                        Brak studentów, którzy nie są przypisani do żadnej grupy.
+                    <td><p class="komunikat info">
+                        Brak studentów, którzy nie są przypisani do żadnej grupy.</p>
                     </td>
                 </tr>
             </table>
         </EmptyDataTemplate>
         <LayoutTemplate>
-            <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+            <table class="tabela" id="itemPlaceholderContainer" runat="server" border="0" style="">
                 <tr id="Tr2" runat="server" style="">
                     <th id="Th1" runat="server">
                         Nazwa Użytkownika

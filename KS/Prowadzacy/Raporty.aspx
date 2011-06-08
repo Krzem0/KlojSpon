@@ -12,8 +12,8 @@
         <EmptyDataTemplate>
             <table id="Table1" runat="server">
                 <tr>
-                    <td>
-                        Nie posiadasz żadnej grupy.
+                    <td><p class="komunikat info">
+                        Nie posiadasz żadnej grupy.</p>
                     </td>
                 </tr>
             </table>
@@ -30,7 +30,7 @@
             </tr>
         </ItemTemplate>
         <LayoutTemplate>
-            <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+            <table class="tabela" id="itemPlaceholderContainer" runat="server" border="0" style="">
                 <tr id="Tr1" runat="server" style="">
                     <th id="Th1" runat="server">
                         Nazwa
@@ -60,7 +60,7 @@
     <h2>Twoje zadania</h2>
     <asp:ListView runat="server" ID="ZadaniaListView" DataKeyNames="IdZadania">
         <LayoutTemplate>
-            <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+            <table id="itemPlaceholderContainer" class="tabela" runat="server" border="0" style="">
                 <tr id="Tr1" runat="server" style="">
                     <th id="Th1" runat="server">
                         Tytuł
@@ -93,8 +93,8 @@
         <EmptyDataTemplate>
             <table id="Table1" runat="server">
                 <tr>
-                    <td>
-                        Nie masz dodanych żadnych zadań.
+                    <td><p class="komunikat info">
+                        Nie masz dodanych żadnych zadań.</p>
                     </td>
                 </tr>
             </table>

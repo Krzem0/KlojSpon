@@ -10,7 +10,7 @@
         Lista zadań</h3>
     <asp:ListView runat="server" ID="ZadanieListView" DataKeyNames="IdZadania" OnSelectedIndexChanging="ZadanieListView_SelectedIndexChanging">
         <LayoutTemplate>
-            <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+            <table class="tabela" id="itemPlaceholderContainer" runat="server" border="0">
                 <tr id="Tr1" runat="server" style="">
                     <th id="Th1" runat="server">
                         Tytuł
@@ -43,8 +43,8 @@
         <EmptyDataTemplate>
             <table id="Table1" runat="server">
                 <tr>
-                    <td>
-                        Nie masz dodanych żadnych zadań.
+                    <td><p class="komunikat info">
+                        Nie masz dodanych żadnych zadań.</p>
                     </td>
                 </tr>
             </table>

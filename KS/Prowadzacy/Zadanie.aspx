@@ -16,7 +16,7 @@
     <asp:Label ID="SuccesLabel" runat="server" Text=""></asp:Label>
     <h3>
         Dodawanie zadania do grup</h3>
-    <p>
+    <p class="komunikat info">
         Zaznacz grupy, do których chcesz przydzielić wybrane zadanie.</p>
     <asp:ListView ID="EnableGroupsListView" runat="server" DataKeyNames="IdGrupy">
         <LayoutTemplate>

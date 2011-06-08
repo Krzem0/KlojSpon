@@ -14,16 +14,16 @@
         <asp:Label ID="NazwaZadaniaLabel" runat="server" Text="Brak zadania"></asp:Label>
     </h2>
     <p>
-        Treść zadania:<br />
+        <b>Treść zadania:</b><br />
         <asp:Label ID="TrescLabel" runat="server" Text="Brak treści"></asp:Label>
     </p>
-    <table>
+    <table >
         <tr>
             <td>
-                Data otwarcia:&nbsp<asp:Label ID="DataOtwarciaLabel" runat="server" Text="Brak"></asp:Label>
+                <b>Data otwarcia:</b>&nbsp<asp:Label ID="DataOtwarciaLabel" runat="server" Text="Brak"></asp:Label>
             </td>
             <td>
-                Data zamknięcia:&nbsp<asp:Label ID="DataZamknieciaLabel" runat="server" Text="Brak"></asp:Label>
+                <b>Data zamknięcia:</b>&nbsp<asp:Label ID="DataZamknieciaLabel" runat="server" Text="Brak"></asp:Label>
             </td>
         </tr>
     </table>
@@ -32,7 +32,7 @@
     <asp:ListView ID="NadeslaneRozwiazaniaListView" runat="server" DataKeyNames="UserId"
         OnSelectedIndexChanging="WyborNadeslanegoZadania">
         <LayoutTemplate>
-            <table id="itemPlaceholderContainer" runat="server" border="0" style="">
+            <table id="itemPlaceholderContainer" class="tabela" runat="server" border="0" style="">
                 <tr id="Tr1" runat="server" style="">
                     <th id="Th1" runat="server">
                         Student
@@ -71,8 +71,8 @@
         <EmptyDataTemplate>
             <table id="Table1" runat="server">
                 <tr>
-                    <td>
-                        Nie ma nadesłanych rozwiązań.
+                    <td><p class="komunikat info">
+                        Nie ma nadesłanych rozwiązań.</p>
                     </td>
                 </tr>
             </table>

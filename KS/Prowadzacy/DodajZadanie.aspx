@@ -34,18 +34,18 @@
     <p>
         <asp:Label ID="SuccesLabel" runat="server" ForeColor="#00CC00"></asp:Label></p>
     <p>
-        Tytuł:
+        <b>Tytuł:</b>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Podaj tytuł"
             Text="*" ControlToValidate="TytulTextBox"></asp:RequiredFieldValidator>
         <asp:TextBox ID="TytulTextBox" runat="server"></asp:TextBox></p>
     <p>
-        Opis (treść) zadania:
+        <b>Opis (treść) zadania:</b>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Podaj opis"
             Text="*" ControlToValidate="OpisTextBox"></asp:RequiredFieldValidator></p>
         <asp:TextBox ID="OpisTextBox" runat="server" Height="183px" TextMode="MultiLine"
             Width="485px"></asp:TextBox>
     <p>
-        Data otwarcia:
+        <b>Data otwarcia:</b>
         <asp:TextBox ID="DataOtwarciaTextBox" runat="server" Height="19px" Width="130px"
             MaxLength="19"></asp:TextBox>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Wprowadź poprawny format daty otwarcia"
@@ -54,7 +54,7 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Wprowadź datę otwarcia"
             Text="*" ControlToValidate="DataOtwarciaTextBox">
         </asp:RequiredFieldValidator>
-        Data zamknięcia:
+        <b>Data zamknięcia:</b>
         <asp:TextBox ID="DataZamknieciaTextBox" runat="server" Height="19px" Width="130px"
             MaxLength="19"></asp:TextBox>
         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="Wprowadź poprawny format daty zamknięcia"
@@ -64,12 +64,12 @@
             Text="*" ControlToValidate="DataZamknieciaTextBox">
         </asp:RequiredFieldValidator>
     <div class="blok1-2"><p>
-        Dane wejściowe:
+        <b>Dane wejściowe:</b>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Podaj dane wejściowe"
             Text="*" ControlToValidate="DaneWeTextBox">
         </asp:RequiredFieldValidator></p>
         
-       <p> <span class="opis">Po jednym zestawie danych wejściowych w jednym wierszu. Wartości oddzielone pojedynczym białym znakiem.</span></p>
+       <p> <span class="komunikat opis">Po jednym zestawie danych wejściowych w jednym wierszu. Wartości oddzielone pojedynczym białym znakiem.</span></p>
         <asp:TextBox ID="DaneWeTextBox" runat="server" Height="200px" TextMode="MultiLine"
             Width="255px"></asp:TextBox></div>
        <div class="blok1-2"><p>
@@ -78,7 +78,7 @@
             Text="*" ControlToValidate="DaneWyTextBox">
         </asp:RequiredFieldValidator>
         </p><p>
-        <span class="opis">Każdy zestaw wartości w kolejnym wierszu, odpowiadającym zestawowi wejściowemu.<br /></span></p>
+        <span class="komunikat opis">Każdy zestaw wartości w kolejnym wierszu, odpowiadającym zestawowi wejściowemu.<br /><br /></span></p>
         <asp:TextBox ID="DaneWyTextBox" runat="server" Height="200px" TextMode="MultiLine"
             Width="255px"></asp:TextBox></div>
             <div class="clr"></div>

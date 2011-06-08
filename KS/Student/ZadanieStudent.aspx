@@ -10,10 +10,10 @@
     <p>
         <asp:Label ID="OpisLabel" runat="server" Text="Nic tu nie ma"></asp:Label>
     </p>
-    <p>
+    <p >
         <asp:Label ID="DataLabel" runat="server" Text="Brak daty"></asp:Label></p>
     <p>
         <asp:Label ID="OcenaLabel" runat="server" Text="Brak oceny"></asp:Label></p>
-    <p>
+    <p class="komunikat info">
         <asp:HyperLink ID="WyslijZadanieHyperLink" runat="server" Visible="False" NavigateUrl="~/Student/WyslijRozwiazanie.aspx">wyślij</asp:HyperLink></p>
 </asp:Content>

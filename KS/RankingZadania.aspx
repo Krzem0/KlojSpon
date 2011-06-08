@@ -1,20 +1,16 @@
-﻿<%@ Page Title="Ranking" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"
-    CodeFile="Ranking.aspx.cs" Inherits="Ranking" %>
+﻿<%@ Page Title="Ranking zadania" Language="C#" MasterPageFile="~/MasterPage.master"
+    AutoEventWireup="true" CodeFile="RankingZadania.aspx.cs" Inherits="RankingZadania" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <h1>
-        Ranking</h1>
-    <asp:ListView ID="RankingListView" runat="server" DataKeyNames="IdZadania" OnSelectedIndexChanging="RankingListView_SelectedIndexChanging">
+    <asp:Label ID="TytulZadaniaLabel" runat="server" Text="<h1>o0</h1>"></asp:Label>
+    <asp:ListView ID="RankingListView" runat="server">
         <LayoutTemplate>
             <table id="itemPlaceholderContainer" runat="server" class="tabela">
                 <tr id="Tr1" runat="server">
                     <th>
                         Lp.
-                    </th>
-                    <th>
-                        Tytuł zadania
                     </th>
                     <th>
                         Student
@@ -36,9 +32,6 @@
                     <asp:Label ID="LpLabel" runat="server" Text='<%# Eval("Lp") %>'></asp:Label>
                 </td>
                 <td>
-                    <asp:LinkButton ID="TytulLinkButton" runat="server" Text='<%# Eval("Tytul") %>' CommandName="Select"></asp:LinkButton>
-                </td>
-                <td>
                     <asp:Label ID="UserNameLabel" runat="server" Text='<%# Eval("UserName") %>'></asp:Label>
                 </td>
                 <td>
@@ -50,10 +43,10 @@
             </tr>
         </ItemTemplate>
         <EmptyDataTemplate>
-            <table runat="server">
+            <table id="Table1" runat="server" class="komunikat info">
                 <tr>
                     <td>
-                        Brak zadań w rankingu.
+                        Brak osób w rankingu.
                     </td>
                 </tr>
             </table>

@@ -19,8 +19,9 @@ public partial class Ranking : System.Web.UI.Page
     protected void WczytajRanking(DataClassesDataContext db)
     {
         var zadania = from z in db.Zadanias
-                     select z;
+                      select z;
 
+        List<ZadaniaRanking> zadaniaRankings = new List<ZadaniaRanking>();
         int indeks = 1;
         foreach (var zadanie in zadania)
         {
@@ -28,30 +29,54 @@ public partial class Ranking : System.Web.UI.Page
                                        where nZ.IdZadania == zadanie.IdZadania
                                        orderby nZ.Ocena descending, nZ.DataNadeslania ascending
                                        select nZ;
-            
+
             if (rozwiazaniaDoZadania.Count() != 0)
             {
                 NadeslaneZadania rozwiazanie = rozwiazaniaDoZadania.First();
                 aspnet_User user = db.aspnet_Users.First(u => u.UserId == rozwiazanie.IdStudenta);
-                TableRow tableRow = new TableRow();
-                tableRow.Cells.Add(new TableCell() { Text = indeks.ToString() });
-                tableRow.Cells.Add(new TableCell() { Text = zadanie.Tytul });
-                tableRow.Cells.Add(new TableCell() { Text = user.UserName });
-                tableRow.Cells.Add(new TableCell() { Text = string.Format("{0:0}%", rozwiazanie.Ocena * 100) });
-                tableRow.Cells.Add(new TableCell() { Text = rozwiazanie.DataNadeslania.ToString() });
-                RankingTable.Rows.Add(tableRow);
+
+                zadaniaRankings.Add(new ZadaniaRanking()
+                {
+                    IdZadania = zadanie.IdZadania.ToString(),
+                    Lp = indeks.ToString(),
+                    Tytul = zadanie.Tytul,
+                    UserName = user.UserName,
+                    Ocena = string.Format("{0:0}%", rozwiazanie.Ocena * 100),
+                    DataNadeslania = rozwiazanie.DataNadeslania.ToString()
+                });
             }
             else
             {
-                TableRow tableRow = new TableRow();
-                tableRow.Cells.Add(new TableCell() { Text = indeks.ToString() });
-                tableRow.Cells.Add(new TableCell() { Text = zadanie.Tytul });
-                tableRow.Cells.Add(new TableCell() { Text = "" });
-                tableRow.Cells.Add(new TableCell() { Text = "" });
-                tableRow.Cells.Add(new TableCell() { Text = "" });
-                RankingTable.Rows.Add(tableRow);
+                zadaniaRankings.Add(new ZadaniaRanking()
+                {
+                    IdZadania = zadanie.IdZadania.ToString(),
+                    Lp = indeks.ToString(),
+                    Tytul = zadanie.Tytul,
+                    UserName = "",
+                    Ocena = "",
+                    DataNadeslania = ""
+                });
             }
             indeks++;
         }
+        RankingListView.DataSource = zadaniaRankings;
+        RankingListView.DataBind();
+    }
+
+    protected class ZadaniaRanking
+    {
+        public string Lp { get; set; }
+        public string Tytul { get; set; }
+        public string UserName { get; set; }
+        public string Ocena { get; set; }
+        public string DataNadeslania { get; set; }
+        public string IdZadania { get; set; }
+    }
+    protected void RankingListView_SelectedIndexChanging(object sender, ListViewSelectEventArgs e)
+    {
+        int id;
+        int.TryParse((string) RankingListView.DataKeys[e.NewSelectedIndex].Value, out id);
+        Session["RankingIdZadania"] = id;
+        Response.Redirect(@"~/RankingZadania.aspx");
     }
 }

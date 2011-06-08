@@ -19,7 +19,17 @@ public partial class Student_ZglosZadanie : System.Web.UI.Page
                 int id = (int)Session["IdZadania"];
                 Session.Remove("IdZadania");
                 ZadaniaDropDownList.SelectedItem.Selected = false;
-                ZadaniaDropDownList.Items.FindByValue(id.ToString()).Selected = true;
+                try
+                {
+                    ZadaniaDropDownList.Items.FindByValue(id.ToString()).Selected = true;
+                }
+                catch (Exception)
+                {
+                    ZadaniaDropDownList.Items[0].Selected = true;
+                }
+                    
+                
+                
             }
             ZadaniaDropDownList_SelectedIndexChanged(ZadaniaDropDownList, e);
         }
